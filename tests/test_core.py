@@ -124,3 +124,13 @@ def test_factcheck_flags_unsupported_number_and_name():
     bad = check_summary("John Brown said profits were 7 million dollars.", src)
     texts = " ".join(f["text"] for f in bad["flags"])
     assert "7" in texts and "Brown" in texts
+
+
+def test_copied_sentences_have_no_novel_ngrams():
+    src = "Alpha beta gamma delta. Epsilon zeta eta theta. Iota kappa lambda mu."
+    # sentences 1 and 3 copied: joining them must not create 'novel' bigrams
+    assert novel_ngram_pct("Alpha beta gamma delta. Iota kappa lambda mu.", src, 2) == 0.0
+
+
+def test_repetition_counted_across_sentences():
+    assert repeated_ngram_pct("The man fled the scene. The man fled the scene.", 3) == pytest.approx(50.0)

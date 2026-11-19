@@ -49,18 +49,34 @@ def rouge_scores(summary, reference) -> dict:
             "rougeL": 100 * s["rougeLsum"].fmeasure}
 
 
+def sentence_ngrams(text, n: int) -> list[tuple]:
+    """n-grams that do not cross sentence boundaries (so concatenating two copied,
+    non-adjacent sentences does not create artificial 'novel' n-grams)."""
+    if isinstance(text, (list, tuple)):
+        sents = text
+    else:
+        from src.data import split_sentences
+
+        sents = split_sentences(text, min_words=0) if text and text.strip() else []
+    out: list[tuple] = []
+    for s in sents:
+        out += ngrams(tokenize(s), n)
+    return out
+
+
 def novel_ngram_pct(summary: str, source: str, n: int) -> float:
     """% of the summary's n-grams that never appear in the source (See et al. 2017)."""
-    summ = ngrams(tokenize(summary), n)
+    summ = sentence_ngrams(summary, n)
     if not summ:
         return 0.0
-    src = set(ngrams(tokenize(source), n))
+    src = set(sentence_ngrams(source, n)) | set(ngrams(tokenize(source), n))
     return 100.0 * sum(1 for g in summ if g not in src) / len(summ)
 
 
 def repeated_ngram_pct(summary: str, n: int) -> float:
-    """% of the summary's n-gram occurrences that repeat an earlier n-gram in the same summary."""
-    summ = ngrams(tokenize(summary), n)
+    """% of the summary's n-gram occurrences that repeat an earlier n-gram in the same summary
+    (n-grams are taken within sentences; repeats are counted across the whole summary)."""
+    summ = sentence_ngrams(summary, n)
     if not summ:
         return 0.0
     counts = Counter(summ)
