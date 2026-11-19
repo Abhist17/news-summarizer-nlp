@@ -1,0 +1,22 @@
+# Pinned for Python 3.10-3.12. CPU is enough; CUDA/MPS used automatically if present.
+torch==2.5.1
+transformers==4.46.3
+tokenizers==0.20.3
+datasets==3.1.0
+huggingface-hub==0.26.2
+accelerate==1.1.1
+sentencepiece==0.2.0
+rouge-score==0.1.2
+nltk==3.9.1
+numpy==1.26.4
+pandas==2.2.3
+matplotlib==3.9.2
+streamlit==1.40.1
+spacy==3.8.2
+tqdm==4.67.1
+pytest==8.3.3
+scikit-learn==1.5.2
+reportlab==4.2.5
+pyarrow==18.1.0
+# spaCy NER model for the factual check (falls back to a regex heuristic if unavailable)
+en_core_web_sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.8.0/en_core_web_sm-3.8.0-py3-none-any.whl
