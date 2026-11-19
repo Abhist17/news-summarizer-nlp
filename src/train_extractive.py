@@ -56,28 +56,41 @@ def build_features(rows: list[dict], encoder: BertSumEncoder, tag: str, batch_si
     return feats
 
 
-def collate(batch: list[dict]):
-    S = max(f["emb"].shape[0] for f in batch)
-    H = batch[0]["emb"].shape[1]
-    x = torch.zeros(len(batch), S, H)
-    y = torch.zeros(len(batch), S)
-    m = torch.zeros(len(batch), S, dtype=torch.bool)
-    for i, f in enumerate(batch):
+def pack(feats: list[dict], device: str):
+    """Pad every document once into [N, S, D] fp16 / [N, S] tensors on `device`.
+
+    Batches are then plain index slices (no per-batch Python padding), which keeps
+    an epoch to a few seconds even on CPU.
+    """
+    S = max(f["emb"].shape[0] for f in feats)
+    D = feats[0]["emb"].shape[1]
+    x = torch.zeros(len(feats), S, D, dtype=torch.float16)
+    y = torch.zeros(len(feats), S)
+    m = torch.zeros(len(feats), S, dtype=torch.bool)
+    for i, f in enumerate(feats):
         n = f["emb"].shape[0]
-        x[i, :n] = f["emb"].float()
+        x[i, :n] = f["emb"]
         y[i, :n] = f["labels"]
         m[i, :n] = True
-    return x, y, m
+    return x.to(device), y.to(device), m.to(device)
+
+
+def batch(packed, idx):
+    x, y, m = packed
+    m_b = m[idx]
+    L = int(m_b.sum(1).max())
+    return x[idx, :L].float(), y[idx, :L], m_b[:, :L]
 
 
 @torch.no_grad()
-def evaluate_head(head, feats, device, batch_size=64) -> dict:
+def evaluate_head(head, feats, packed, batch_size=128) -> dict:
     head.eval()
     agg = {"rouge1": [], "rouge2": [], "rougeL": []}
+    dev = packed[0].device
     for i in range(0, len(feats), batch_size):
         chunk = feats[i:i + batch_size]
-        x, _, m = collate(chunk)
-        probs = torch.sigmoid(head(x.to(device), m.to(device))).cpu()
+        x, _, m = batch(packed, torch.arange(i, i + len(chunk), device=dev))
+        probs = torch.sigmoid(head(x, m)).cpu()
         for j, f in enumerate(chunk):
             n = f["emb"].shape[0]
             sel, _ = select_sentences(f["sents"], probs[j, :n].tolist(), 3, True)
@@ -104,10 +117,11 @@ def main():
     ap.add_argument("--val-n", type=int, default=300)
     ap.add_argument("--encoder", default=ENCODER_NAME)
     ap.add_argument("--pooling", default=EXT_POOLING, choices=["cls", "cls+mean"])
-    ap.add_argument("--epochs", type=int, default=10)
+    ap.add_argument("--epochs", type=int, default=8)
     ap.add_argument("--batch-size", type=int, default=32)
     ap.add_argument("--encode-batch-size", type=int, default=8)
-    ap.add_argument("--lr", type=float, default=5e-4)
+    ap.add_argument("--lr", type=float, default=1e-3)
+    ap.add_argument("--dropout", type=float, default=0.3)
     ap.add_argument("--seed", type=int, default=42)
     ap.add_argument("--device", default=None, help="cpu / cuda / mps (default: auto)")
     args = ap.parse_args()
@@ -139,7 +153,7 @@ def main():
     base = baseline_scores(val_feats)
     log.info("Val Lead-3 %s | Oracle %s", base["lead3"], base["oracle"])
 
-    head = SentenceScorerHead(in_dim=hidden).to(device)
+    head = SentenceScorerHead(in_dim=hidden, dropout=args.dropout).to(device)
     opt = torch.optim.AdamW(head.parameters(), lr=args.lr, weight_decay=0.01)
     steps_per_epoch = (len(train_feats) + args.batch_size - 1) // args.batch_size
     total = steps_per_epoch * args.epochs
@@ -148,14 +162,14 @@ def main():
         opt, lambda s: min((s + 1) / warm, max(0.0, (total - s) / max(1, total - warm))))
     bce = nn.BCEWithLogitsLoss(reduction="none")
 
+    train_packed, val_packed = pack(train_feats, device), pack(val_feats, device)
     history, best, best_epoch = [], -1.0, -1
     for epoch in range(1, args.epochs + 1):
         head.train()
-        random.shuffle(train_feats)
+        perm = torch.randperm(len(train_feats), device=device)
         losses = []
         for i in range(0, len(train_feats), args.batch_size):
-            x, y, m = collate(train_feats[i:i + args.batch_size])
-            x, y, m = x.to(device), y.to(device), m.to(device)
+            x, y, m = batch(train_packed, perm[i:i + args.batch_size])
             loss = (bce(head(x, m), y) * m).sum() / m.sum()
             opt.zero_grad()
             loss.backward()
@@ -163,7 +177,7 @@ def main():
             opt.step()
             sched.step()
             losses.append(loss.item())
-        val = evaluate_head(head, val_feats, device)
+        val = evaluate_head(head, val_feats, val_packed)
         avg = (val["rouge1"] + val["rouge2"] + val["rougeL"]) / 3
         history.append({"epoch": epoch, "loss": float(np.mean(losses)), **val})
         log.info("epoch %d  loss %.4f  val R1 %.2f R2 %.2f RL %.2f", epoch, np.mean(losses),
@@ -174,7 +188,7 @@ def main():
                         "state_dict": {k: v.detach().half().cpu() for k, v in head.state_dict().items()},
                         "epoch": epoch, "val": val, "train_n": len(train_feats)}, EXT_CHECKPOINT)
 
-    summary = {"device": device, "encoder": args.encoder, "pooling": args.pooling, "lr": args.lr,
+    summary = {"device": device, "encoder": args.encoder, "pooling": args.pooling, "lr": args.lr, "dropout": args.dropout,
                "batch_size": args.batch_size, "train_n": len(train_feats),
                "val_n": len(val_feats), "epochs": args.epochs, "best_epoch": best_epoch,
                "best_val": history[best_epoch - 1], "val_lead3": base["lead3"],
