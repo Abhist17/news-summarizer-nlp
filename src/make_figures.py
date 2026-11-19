@@ -93,12 +93,15 @@ def latency(eff: dict, scores: list[dict]):
     ax.set_yticks(y, [_short(m) for m, _ in items])
     ax.set_xlabel("seconds per article (log scale)", color=MUTED, fontsize=9)
     ax.xaxis.grid(True, color=GRID)
-    ax.set_xlim(right=max(v for _, v in items) * 12)
+    ax.set_xlim(min(v for _, v in items) / 4, max(v for _, v in items) * 12)
     dev = eff["device"].upper()
     hw = eff["hardware"].get("gpu") if eff["device"] == "cuda" else eff["hardware"].get("cpu")
     _style(ax, "Average latency per article", f"Measured on {dev} ({hw}); BART batched "
            f"{eff.get('abstractive_batch_size')} at a time, latency = batch time / batch size.")
-    _save(fig, "latency.png")
+    fig.tight_layout()
+    fig.subplots_adjust(left=0.2)
+    fig.savefig(FIG / "latency.png", facecolor=fig.get_facecolor())
+    plt.close(fig)
 
 
 def rouge_vs_length(per: list[dict]):
@@ -132,8 +135,8 @@ def rouge_vs_length(per: list[dict]):
 def confusion(clf: dict):
     if "test" not in clf:
         return
-    rules = ["BertSumExt-style, threshold 0.5", "BertSumExt-style, top-3 per article"]
-    fig, axes = plt.subplots(1, 2, figsize=(8.5, 3.8), dpi=150)
+    rules = [r for r in clf["test"] if r.startswith("BertSumExt")]
+    fig, axes = plt.subplots(1, len(rules), figsize=(3.6 * len(rules), 3.9), dpi=150)
     fig.patch.set_facecolor(SURFACE)
     for ax, rule in zip(axes, rules):
         m = clf["test"][rule]
@@ -144,13 +147,17 @@ def confusion(clf: dict):
             for j in range(2):
                 ax.text(j, i, f"{cm[i, j]:,}\n({100 * norm[i, j]:.1f}% of row)", ha="center", va="center",
                         fontsize=9, color="white" if norm[i, j] > 0.55 else INK)
-        ax.set_xticks([0, 1], ["pred: not summary", "pred: summary"], fontsize=8.5, color=MUTED)
+        ax.set_xticks([0, 1], ["pred: no", "pred: yes"], fontsize=8.5, color=MUTED)
         ax.set_yticks([0, 1], ["oracle: no", "oracle: yes"], fontsize=8.5, color=MUTED)
         ax.tick_params(length=0)
         for s in ax.spines.values():
             s.set_visible(False)
-        ax.set_title(f"{rule.split(', ')[1]}\nF1 {m['f1']:.3f} · AUC {m['roc_auc']:.3f}", fontsize=10, color=INK)
-    fig.suptitle("Extractive sentence classifier vs greedy-oracle labels (test sample)", fontsize=11.5,
+        name = rule.split(", ", 1)[1].replace(" (F1-tuned on val)", "\n(F1-tuned on validation)")
+        ax.set_title(f"{name}\nF1 {m['f1']:.3f} · P {m['precision']:.2f} · R {m['recall']:.2f}",
+                     fontsize=9.5, color=INK)
+    auc = clf["test"][rules[0]]["roc_auc"]
+    fig.suptitle(f"Extractive sentence classifier vs greedy-oracle labels (test sample, ROC-AUC {auc:.3f})",
+                 fontsize=11.5,
                  color=INK, x=0.02, ha="left")
     _save(fig, "confusion_matrix.png")
 
@@ -178,10 +185,10 @@ def pipeline_diagram():
     """Static PNG of the system pipeline (mirrors the Mermaid diagram in README / REPORT)."""
     from matplotlib.patches import FancyArrowPatch, FancyBboxPatch
 
-    fig, ax = plt.subplots(figsize=(11, 5.6), dpi=150)
+    fig, ax = plt.subplots(figsize=(11.5, 6.2), dpi=150)
     fig.patch.set_facecolor("white")
-    ax.set_xlim(0, 110)
-    ax.set_ylim(0, 56)
+    ax.set_xlim(0, 116)
+    ax.set_ylim(-5, 55)
     ax.axis("off")
 
     def box(x, y, w, h, text, color, bold=False):
@@ -200,7 +207,7 @@ def pipeline_diagram():
     arrow(14.4, 28, 17.6, 28)
     # branches
     box(38, 44, 17, 7, "Lead-3\nfirst 3 sentences", grey, True)
-    box(38, 24, 17, 9, "BERT-base (frozen)\n[CLS] per sentence,\nalt. segments, 512 tok", blue, True)
+    box(38, 24, 17, 9, "BERT-base (frozen)\n[CLS] + mean-pool per\nsentence, alt. segments,\n512 tokens", blue, True)
     box(59, 24, 17, 9, "2-layer Transformer\nhead + sigmoid\n(trained on oracle)", blue)
     box(80, 24, 15, 9, "Top-3 + trigram\nblocking, article\norder", blue)
     box(38, 3, 17, 9, "Abstractive input\n> 1024 BART tokens?", green, True)
@@ -215,11 +222,11 @@ def pipeline_diagram():
     arrow(55.4, 6.5, 58.6, 2)
     arrow(76.4, 10, 79.6, 8)
     arrow(76.4, 2, 79.6, 6)
-    box(99, 18, 10.5, 20, "Metrics\nROUGE-1/2/L\nnovel n-gram %\nrepeated n-gram %\ncompression\n\n→ Streamlit\n   app +\n   results/",
+    box(99.5, 16, 15, 24, "Metrics\nROUGE-1/2/L\nnovel n-gram %\nrepeated n-gram %\ncompression\n\n→ Streamlit app\n→ results/",
         purple, True)
-    arrow(55.4, 47.5, 98.6, 36)
-    arrow(95.4, 28.5, 98.6, 28.5)
-    arrow(95.4, 7.5, 98.6, 20)
+    arrow(55.4, 47.5, 99.1, 38)
+    arrow(95.4, 28.5, 99.1, 28.5)
+    arrow(95.4, 7.5, 99.1, 18)
     _save(fig, "pipeline.png")
 
 
