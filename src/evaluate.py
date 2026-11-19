@@ -217,7 +217,7 @@ def main():
     logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
     device = get_device(args.device)
     t_start = time.time()
-    bs = args.abs_batch_size or (8 if device == "cuda" else 4)
+    bs = args.abs_batch_size or 4
 
     rows = load_cnndm("test", args.n)
     ext = ExtractiveSummarizer(device=device)

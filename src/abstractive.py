@@ -93,5 +93,16 @@ class AbstractiveSummarizer:
         texts = [clean_article(a) for a in articles]
         outs: list[str] = []
         for i in range(0, len(texts), batch_size):
-            outs += self.generate(texts[i:i + batch_size])
+            outs += self._generate_safe(texts[i:i + batch_size])
         return outs
+
+    def _generate_safe(self, texts: list[str]) -> list[str]:
+        """generate(), halving the batch on CUDA out-of-memory (small laptop GPUs)."""
+        try:
+            return self.generate(texts)
+        except torch.OutOfMemoryError:
+            if len(texts) == 1:
+                raise
+            torch.cuda.empty_cache()
+            mid = len(texts) // 2
+            return self._generate_safe(texts[:mid]) + self._generate_safe(texts[mid:])
