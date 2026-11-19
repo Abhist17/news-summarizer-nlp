@@ -69,7 +69,7 @@ def novel_ngram_pct(summary: str, source: str, n: int) -> float:
     summ = sentence_ngrams(summary, n)
     if not summ:
         return 0.0
-    src = set(sentence_ngrams(source, n)) | set(ngrams(tokenize(source), n))
+    src = set(ngrams(tokenize(source), n))  # superset of the source's within-sentence n-grams
     return 100.0 * sum(1 for g in summ if g not in src) / len(summ)
 
 
