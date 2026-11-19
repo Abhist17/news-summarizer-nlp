@@ -1,0 +1,26 @@
+{
+  "device": "cuda",
+  "hardware": {
+    "platform": "Windows-11-10.0.26300-SP0",
+    "python": "3.12.4",
+    "cpu": "Intel(R) Core(TM) i7-14700HX",
+    "torch": "2.5.1+cu124",
+    "cpu_threads": 28,
+    "gpu": "NVIDIA GeForce RTX 4050 Laptop GPU"
+  },
+  "avg_latency_s": {
+    "Lead-3": 6e-06,
+    "Extractive: BertSumExt-style (ours)": 0.031443,
+    "Oracle (extractive upper bound)": null,
+    "Abstractive: BART-large-CNN": 1.413539,
+    "Reference highlights": null
+  },
+  "abstractive_batch_size": 4,
+  "model_params": {
+    "extractive encoder (frozen) bert-base-uncased": 109482240,
+    "extractive head (trained)": 1973761,
+    "facebook/bart-large-cnn": 406290432
+  },
+  "training_minutes": 1.32,
+  "extractive_checkpoint_mb": 3.96
+}

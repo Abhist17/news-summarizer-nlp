@@ -1,0 +1,2077 @@
+{
+ "meta": {
+  "created": "2026-11-20 02:33",
+  "device": "cuda",
+  "extractive_method": "BertSumExt-style (frozen BERT + 2-layer Transformer head)",
+  "factcheck_backend": "spaCy en_core_web_sm NER",
+  "models": {
+   "BART-large-CNN": "facebook/bart-large-cnn",
+   "DistilBART-CNN (fast)": "sshleifer/distilbart-cnn-12-6"
+  },
+  "seconds": 140.2
+ },
+ "samples": [
+  {
+   "article": "Jonathas took advantage of a defensive blunder to give Elche a 1-0 win against Real Sociedad in La Liga on Monday night. The striker took advantage of some poor control and hesitation by Sociedad midfielder Markel Bergara to steal the ball before racing away unchallenged to score his 10th goal of the season. Xabi Prieto had the opportunity to equalise for the away side but shot over the bar on the half-hour mark. Elche celebrate after striker Jonathas scored to clinch a 1-0 win over Real Sociedad in La Liga on Monday . Real Sociedad manager David Moyes lets out a sigh as his side lost at the Martinez Valero Stadium . Goalscorer Jonathas (left) is challenged for the ball by Real Sociedad defender Alberto de la Bella . Elche midfielder Mario Pasalic, on loan from Chelsea, grapples with David Zurutuza in a bid for possession . Mario Pasalic, on loan from Chelsea, went close to doubling Elche's advantage in the second half but the 20-year-old Croatian fired wide from the edge of the area. The defeat leaves David Moyes' side in 12th place while Elche moved six points clear of the relegation zone and into 14th. Barcelona are top of the league on 78 points, two ahead of rivals Real Madrid in second-place.",
+   "reference": "Elche striker Jonathas scored only goal of the game to beat Real Sociedad .\nDavid Moyes' side remain in 12th place in the La Liga table .\nBarcelona are top of the league, two points ahead of Real Madrid .",
+   "n_article_words": 217,
+   "sentences": [
+    "Jonathas took advantage of a defensive blunder to give Elche a 1-0 win against Real Sociedad in La Liga on Monday night.",
+    "The striker took advantage of some poor control and hesitation by Sociedad midfielder Markel Bergara to steal the ball before racing away unchallenged to score his 10th goal of the season.",
+    "Xabi Prieto had the opportunity to equalise for the away side but shot over the bar on the half-hour mark.",
+    "Elche celebrate after striker Jonathas scored to clinch a 1-0 win over Real Sociedad in La Liga on Monday .",
+    "Real Sociedad manager David Moyes lets out a sigh as his side lost at the Martinez Valero Stadium .",
+    "Goalscorer Jonathas (left) is challenged for the ball by Real Sociedad defender Alberto de la Bella .",
+    "Elche midfielder Mario Pasalic, on loan from Chelsea, grapples with David Zurutuza in a bid for possession .",
+    "Mario Pasalic, on loan from Chelsea, went close to doubling Elche's advantage in the second half but the 20-year-old Croatian fired wide from the edge of the area.",
+    "The defeat leaves David Moyes' side in 12th place while Elche moved six points clear of the relegation zone and into 14th.",
+    "Barcelona are top of the league on 78 points, two ahead of rivals Real Madrid in second-place."
+   ],
+   "lead3": {
+    "summary": "Jonathas took advantage of a defensive blunder to give Elche a 1-0 win against Real Sociedad in La Liga on Monday night. The striker took advantage of some poor control and hesitation by Sociedad midfielder Markel Bergara to steal the ball before racing away unchallenged to score his 10th goal of the season. Xabi Prieto had the opportunity to equalise for the away side but shot over the bar on the half-hour mark.",
+    "summary_sents": [
+     "Jonathas took advantage of a defensive blunder to give Elche a 1-0 win against Real Sociedad in La Liga on Monday night.",
+     "The striker took advantage of some poor control and hesitation by Sociedad midfielder Markel Bergara to steal the ball before racing away unchallenged to score his 10th goal of the season.",
+     "Xabi Prieto had the opportunity to equalise for the away side but shot over the bar on the half-hour mark."
+    ],
+    "indices": [
+     0,
+     1,
+     2
+    ],
+    "latency": 5.299999884300632e-06,
+    "metrics": {
+     "words": 75,
+     "compression": 2.8933333333333335,
+     "novel_1": 0.0,
+     "novel_2": 0.0,
+     "novel_3": 0.0,
+     "repeated_2": 2.7777777777777777,
+     "repeated_3": 1.4492753623188406,
+     "latency": 5.299999884300632e-06
+    },
+    "rouge": {
+     "rouge1": 32.14285714285714,
+     "rouge2": 7.2727272727272725,
+     "rougeL": 30.35714285714286
+    }
+   },
+   "extractive": {
+    "summary": "Jonathas took advantage of a defensive blunder to give Elche a 1-0 win against Real Sociedad in La Liga on Monday night. The defeat leaves David Moyes' side in 12th place while Elche moved six points clear of the relegation zone and into 14th. Barcelona are top of the league on 78 points, two ahead of rivals Real Madrid in second-place.",
+    "summary_sents": [
+     "Jonathas took advantage of a defensive blunder to give Elche a 1-0 win against Real Sociedad in La Liga on Monday night.",
+     "The defeat leaves David Moyes' side in 12th place while Elche moved six points clear of the relegation zone and into 14th.",
+     "Barcelona are top of the league on 78 points, two ahead of rivals Real Madrid in second-place."
+    ],
+    "indices": [
+     0,
+     8,
+     9
+    ],
+    "blocked": [
+     3,
+     1
+    ],
+    "scores": [
+     0.6255347728729248,
+     0.2806064486503601,
+     0.1409626603126526,
+     0.45299193263053894,
+     0.05998988449573517,
+     0.0420403815805912,
+     0.0928071066737175,
+     0.10138538479804993,
+     0.2132311314344406,
+     0.22711551189422607
+    ],
+    "method": "BertSumExt-style (frozen BERT + 2-layer Transformer head)",
+    "trained": true,
+    "latency": 2.272011300000031,
+    "metrics": {
+     "words": 63,
+     "compression": 3.4444444444444446,
+     "novel_1": 0.0,
+     "novel_2": 0.0,
+     "novel_3": 0.0,
+     "repeated_2": 1.6666666666666667,
+     "repeated_3": 0.0,
+     "latency": 2.272011300000031
+    },
+    "rouge": {
+     "rouge1": 57.99999999999999,
+     "rouge2": 28.57142857142857,
+     "rougeL": 57.99999999999999
+    }
+   },
+   "abstractive": {
+    "BART-large-CNN": {
+     "chunked": false,
+     "n_chunks": 1,
+     "chunk_summaries": [],
+     "n_input_tokens": 288,
+     "model": "facebook/bart-large-cnn",
+     "summary": "Jonathas scored to give Elche a 1-0 win over Real Sociedad in La Liga. The striker took advantage of a defensive blunder by Markel Bergara. Xabi Prieto had the opportunity to equalise for the away side. The defeat leaves David Moyes' side in 12th place.",
+     "latency": 6.1605985999999575,
+     "metrics": {
+      "words": 46,
+      "compression": 4.717391304347826,
+      "novel_1": 0.0,
+      "novel_2": 4.761904761904762,
+      "novel_3": 10.526315789473685,
+      "repeated_2": 0.0,
+      "repeated_3": 0.0,
+      "latency": 6.1605985999999575
+     },
+     "rouge": {
+      "rouge1": 48.19277108433735,
+      "rouge2": 17.283950617283953,
+      "rougeL": 45.78313253012048
+     },
+     "factcheck": {
+      "flags": [],
+      "backend": "spaCy"
+     }
+    },
+    "DistilBART-CNN (fast)": {
+     "chunked": false,
+     "n_chunks": 1,
+     "chunk_summaries": [],
+     "n_input_tokens": 288,
+     "model": "sshleifer/distilbart-cnn-12-6",
+     "summary": "Jonathas scored to give Elche a 1-0 win over Real Sociedad in La Liga on Monday night . The striker took advantage of some poor control and hesitation by Markel Bergara to steal the ball . Xabi Prieto had the opportunity to equalise for the away side but shot over the bar . The defeat leaves David Moyes' side in 12th place while Elche move six points clear of relegation zone .",
+     "latency": 1.6111292000000503,
+     "metrics": {
+      "words": 69,
+      "compression": 3.1449275362318843,
+      "novel_1": 1.4492753623188406,
+      "novel_2": 6.153846153846154,
+      "novel_3": 13.114754098360656,
+      "repeated_2": 0.0,
+      "repeated_3": 0.0,
+      "latency": 1.6111292000000503
+     },
+     "rouge": {
+      "rouge1": 41.50943396226415,
+      "rouge2": 13.461538461538462,
+      "rougeL": 41.50943396226415
+     },
+     "factcheck": {
+      "flags": [],
+      "backend": "spaCy"
+     }
+    }
+   },
+   "id": "487224ddfed45fcaf4d309c734d6e686a5e0ec1c",
+   "title": "Jonathas took advantage of a defensive blunder to give Elche a 1-0 win...",
+   "n_bart_tokens": 288,
+   "n_flags": {
+    "BART-large-CNN": 0,
+    "DistilBART-CNN (fast)": 0
+   }
+  },
+  {
+   "article": "There may have been a few disgruntled lap swimmers at Bondi on Thursday. The daily visitors to the iconic Icebergs Club were forced to take their exercise back to the beach as their beloved pool was drained for the fashion folk. The empty pool was used as the unusual catwalk setting for the Ten Pieces presentation as part of Mercedes-Benz Fashion Week Australia. Scroll down for video . No diving! Bondi's Icebergs Club pool was drained on Thursday to create a unique catwalk for Mercedes-Benz Fashion Week Australia . Catwalk with a view: Crowds gathered to take in the show from the balcony of the iconic club . Walk this way: Models paraded through the empty pool and along the break wall in front of a beautiful backdrop of the ocean . Mono: Ten pieces produces capsule collection of ten pieces of unisex clothing designed to be worn in 20 ways . The label had no trouble securing the show-stopping location. Ten Pieces is headed up by Icebergs restaurateur Maurice Terzini and his partner Lucy Hinckfuss. The lifestyle brand produces unisex collections of - you guessed it - ten pieces. A presentation of entirely monochrome creations saw models walking through the concrete pool and along the break wall with a backdrop of the ocean. The collection of ten is designed to be worn in 20 different ways, and are suitable for day to night wear. Guests were treated to nibbles by Icebergs and drinks from Santa Vittoria as they took in the minimalist, androgynous designs. They were treated to beautiful blue sky and sunshine throughout the show, which took place on an unseasonably warm 28 degrees celcius day. Worlds collide: Beachgoers at Bondi stopped and stared as the catwalk show took place . Girls and boys: The androgynous wares are designed to be worn by both sexes . Winter is coming: Models wrapped up in scarves and hoodies from the unisex collection . Poolside: Guests enjoyed the sunny weather as they waited for the show to commence . Public site: Passers-by stopped to watch the show from the road above the pool .",
+   "reference": "Ten Pieces collection was presented at the beachside pool during final day of MBFWA .\nGuests sat in and around the pool to take in the capsule collection of monochrome unisex pieces .\nLabel is owned by Icebergs restaurateur Maurice Terzini and partner Lucy Hinckfuss .",
+   "n_article_words": 346,
+   "sentences": [
+    "There may have been a few disgruntled lap swimmers at Bondi on Thursday.",
+    "The daily visitors to the iconic Icebergs Club were forced to take their exercise back to the beach as their beloved pool was drained for the fashion folk.",
+    "The empty pool was used as the unusual catwalk setting for the Ten Pieces presentation as part of Mercedes-Benz Fashion Week Australia.",
+    "Scroll down for video .",
+    "Bondi's Icebergs Club pool was drained on Thursday to create a unique catwalk for Mercedes-Benz Fashion Week Australia .",
+    "Catwalk with a view: Crowds gathered to take in the show from the balcony of the iconic club .",
+    "Walk this way: Models paraded through the empty pool and along the break wall in front of a beautiful backdrop of the ocean .",
+    "Mono: Ten pieces produces capsule collection of ten pieces of unisex clothing designed to be worn in 20 ways .",
+    "The label had no trouble securing the show-stopping location.",
+    "Ten Pieces is headed up by Icebergs restaurateur Maurice Terzini and his partner Lucy Hinckfuss.",
+    "The lifestyle brand produces unisex collections of - you guessed it - ten pieces.",
+    "A presentation of entirely monochrome creations saw models walking through the concrete pool and along the break wall with a backdrop of the ocean.",
+    "The collection of ten is designed to be worn in 20 different ways, and are suitable for day to night wear.",
+    "Guests were treated to nibbles by Icebergs and drinks from Santa Vittoria as they took in the minimalist, androgynous designs.",
+    "They were treated to beautiful blue sky and sunshine throughout the show, which took place on an unseasonably warm 28 degrees celcius day.",
+    "Worlds collide: Beachgoers at Bondi stopped and stared as the catwalk show took place .",
+    "Girls and boys: The androgynous wares are designed to be worn by both sexes .",
+    "Winter is coming: Models wrapped up in scarves and hoodies from the unisex collection .",
+    "Poolside: Guests enjoyed the sunny weather as they waited for the show to commence .",
+    "Public site: Passers-by stopped to watch the show from the road above the pool ."
+   ],
+   "lead3": {
+    "summary": "There may have been a few disgruntled lap swimmers at Bondi on Thursday. The daily visitors to the iconic Icebergs Club were forced to take their exercise back to the beach as their beloved pool was drained for the fashion folk. The empty pool was used as the unusual catwalk setting for the Ten Pieces presentation as part of Mercedes-Benz Fashion Week Australia.",
+    "summary_sents": [
+     "There may have been a few disgruntled lap swimmers at Bondi on Thursday.",
+     "The daily visitors to the iconic Icebergs Club were forced to take their exercise back to the beach as their beloved pool was drained for the fashion folk.",
+     "The empty pool was used as the unusual catwalk setting for the Ten Pieces presentation as part of Mercedes-Benz Fashion Week Australia."
+    ],
+    "indices": [
+     0,
+     1,
+     2
+    ],
+    "latency": 6.499999926745659e-06,
+    "metrics": {
+     "words": 64,
+     "compression": 5.40625,
+     "novel_1": 0.0,
+     "novel_2": 0.0,
+     "novel_3": 0.0,
+     "repeated_2": 4.918032786885246,
+     "repeated_3": 0.0,
+     "latency": 6.499999926745659e-06
+    },
+    "rouge": {
+     "rouge1": 26.168224299065418,
+     "rouge2": 3.8095238095238093,
+     "rougeL": 24.299065420560748
+    }
+   },
+   "extractive": {
+    "summary": "The daily visitors to the iconic Icebergs Club were forced to take their exercise back to the beach as their beloved pool was drained for the fashion folk. The empty pool was used as the unusual catwalk setting for the Ten Pieces presentation as part of Mercedes-Benz Fashion Week Australia. Mono: Ten pieces produces capsule collection of ten pieces of unisex clothing designed to be worn in 20 ways .",
+    "summary_sents": [
+     "The daily visitors to the iconic Icebergs Club were forced to take their exercise back to the beach as their beloved pool was drained for the fashion folk.",
+     "The empty pool was used as the unusual catwalk setting for the Ten Pieces presentation as part of Mercedes-Benz Fashion Week Australia.",
+     "Mono: Ten pieces produces capsule collection of ten pieces of unisex clothing designed to be worn in 20 ways ."
+    ],
+    "indices": [
+     1,
+     2,
+     7
+    ],
+    "blocked": [
+     4
+    ],
+    "scores": [
+     0.0792044922709465,
+     0.2230951488018036,
+     0.42125290632247925,
+     0.011988652870059013,
+     0.3842999339103699,
+     0.10780902206897736,
+     0.04234611243009567,
+     0.11488640308380127,
+     0.04474543407559395,
+     0.03712594881653786,
+     0.04776829853653908,
+     0.020767616108059883,
+     0.08962041139602661,
+     0.01572384312748909,
+     0.019768372178077698,
+     0.031382039189338684,
+     0.014141160994768143,
+     0.01959427073597908,
+     0.02289535477757454,
+     0.02288774959743023
+    ],
+    "method": "BertSumExt-style (frozen BERT + 2-layer Transformer head)",
+    "trained": true,
+    "latency": 0.03141090000008262,
+    "metrics": {
+     "words": 70,
+     "compression": 4.942857142857143,
+     "novel_1": 0.0,
+     "novel_2": 0.0,
+     "novel_3": 0.0,
+     "repeated_2": 7.462686567164179,
+     "repeated_3": 0.0,
+     "latency": 0.03141090000008262
+    },
+    "rouge": {
+     "rouge1": 33.62831858407079,
+     "rouge2": 7.207207207207207,
+     "rougeL": 28.31858407079646
+    }
+   },
+   "abstractive": {
+    "BART-large-CNN": {
+     "chunked": false,
+     "n_chunks": 1,
+     "chunk_summaries": [],
+     "n_input_tokens": 437,
+     "model": "facebook/bart-large-cnn",
+     "summary": "Bondi's Icebergs Club pool was drained on Thursday to create a unique catwalk for Mercedes-Benz Fashion Week Australia. Ten Pieces is a lifestyle brand that produces unisex collections of - you guessed it - ten pieces. The collection of ten is designed to be worn in 20 different ways, and are suitable for day to night wear.",
+     "latency": 1.4891015999996853,
+     "metrics": {
+      "words": 57,
+      "compression": 6.0701754385964914,
+      "novel_1": 1.7543859649122806,
+      "novel_2": 7.407407407407407,
+      "novel_3": 11.764705882352942,
+      "repeated_2": 1.8518518518518519,
+      "repeated_3": 0.0,
+      "latency": 1.4891015999996853
+     },
+     "rouge": {
+      "rouge1": 34.0,
+      "rouge2": 4.081632653061225,
+      "rougeL": 30.0
+     },
+     "factcheck": {
+      "flags": [],
+      "backend": "spaCy"
+     }
+    },
+    "DistilBART-CNN (fast)": {
+     "chunked": false,
+     "n_chunks": 1,
+     "chunk_summaries": [],
+     "n_input_tokens": 437,
+     "model": "sshleifer/distilbart-cnn-12-6",
+     "summary": "The Icebergs Club pool was drained on Thursday to create a unique catwalk for Mercedes-Benz Fashion Week Australia . Models paraded through the concrete pool and along the break wall with a backdrop of the ocean . The unisex collection is designed to be worn in 20 different ways and suitable for day to night wear .",
+     "latency": 0.8338440999996237,
+     "metrics": {
+      "words": 55,
+      "compression": 6.290909090909091,
+      "novel_1": 0.0,
+      "novel_2": 5.769230769230769,
+      "novel_3": 10.204081632653061,
+      "repeated_2": 0.0,
+      "repeated_3": 0.0,
+      "latency": 0.8338440999996237
+     },
+     "rouge": {
+      "rouge1": 32.6530612244898,
+      "rouge2": 0.0,
+      "rougeL": 28.57142857142857
+     },
+     "factcheck": {
+      "flags": [],
+      "backend": "spaCy"
+     }
+    }
+   },
+   "id": "62844962efc2c29f692606454ac355a40ab445fc",
+   "title": "There may have been a few disgruntled lap swimmers at Bondi on Thursday.",
+   "n_bart_tokens": 437,
+   "n_flags": {
+    "BART-large-CNN": 0,
+    "DistilBART-CNN (fast)": 0
+   }
+  },
+  {
+   "article": "Dead fish have continued to wash up on the banks of a Rio de Janeiro lake that is scheduled to hold Olympic rowing competitions during the 2016 games. Fish die-offs are a frequent occurrence in Rio's waterways, which are choked with raw sewage and rubbish. The latest incident, affecting thousands of small silvery fish called twaite shad, began several days ago at the Rodrigo de Freitas lake, where the Olympic canoeing and rowing events are to be held. The Rodrigo de Freitas lagoon will hold the Brazil 2016 Olympics rowing and canoe competitions . Currently, the lake is littered with thousands of dead fish due to the raw sewage and rubbish within it . With neighbors complaining about the stench, employees of the city's waste management company have been working to clear away the dead fish. 'Every year there are these die-offs, sometimes bigger, sometimes smaller,' said photographer Alex Moutinho, who has lived near the lake for over three decades. 'It's one more Brazilian shame.' In a statement, the city's environmental secretariat said the latest incident was the result of recent rains and high sea levels, which caused the lake's water temperature to plummet. The statement stressed that twaite shad are sensitive to variations in temperature, adding that oxygen levels in the lake were normal. Officials say the recent problems are the result of rain, which caused the lake's temperature to plummet . The city's waste management company have been brought in to clear the lake of the dead fish . Vultures feed on the dead fish on the shore of the Rodrigo de Freitas lagoon in Rio de Janeiro on Monday . Previous fish die-offs in the lake have been blamed on pollution-related drops in oxygen levels. The cause of February die-off of twaite shad in the Guanabara Bay, where the Olympic sailing events are to be held, were not known. Rio's water quality has become a contentious topic ahead of the 2016 Olympics. Authorities had pledged to clean up some of the waterways including the Guanabara Bay ahead of the games but now admit those promises won't be met, sparking sailors to voice worries about possible health and safety threats posed by competing in the sewage and garbage-filled waters. Residents concerned about the water quality of a canal in the Rio neighborhood of Recreio staged a protest on Sunday. Hundreds of demonstrators linked arms along the Canal das Taxas, which is filled with raw sewage from nearby condominiums. The canal flows into a lagoon where the Olympic Park is being built.",
+   "reference": "The Rodrigo de Freitas lagoon will hold the 2016 Olympic rowing races .\nCurrently, the lake is filled with thousands of dead twaite shad fish .\nRio's waterways are choked with raw sewage and rubbish, and concerns have been raised over health and safety ahead of the Olympics .\nOfficials say the deaths are due to a plummet in the water temperature .",
+   "n_article_words": 433,
+   "sentences": [
+    "Dead fish have continued to wash up on the banks of a Rio de Janeiro lake that is scheduled to hold Olympic rowing competitions during the 2016 games.",
+    "Fish die-offs are a frequent occurrence in Rio's waterways, which are choked with raw sewage and rubbish.",
+    "The latest incident, affecting thousands of small silvery fish called twaite shad, began several days ago at the Rodrigo de Freitas lake, where the Olympic canoeing and rowing events are to be held.",
+    "The Rodrigo de Freitas lagoon will hold the Brazil 2016 Olympics rowing and canoe competitions .",
+    "Currently, the lake is littered with thousands of dead fish due to the raw sewage and rubbish within it .",
+    "With neighbors complaining about the stench, employees of the city's waste management company have been working to clear away the dead fish.",
+    "'Every year there are these die-offs, sometimes bigger, sometimes smaller,' said photographer Alex Moutinho, who has lived near the lake for over three decades.",
+    "'It's one more Brazilian shame.'",
+    "In a statement, the city's environmental secretariat said the latest incident was the result of recent rains and high sea levels, which caused the lake's water temperature to plummet.",
+    "The statement stressed that twaite shad are sensitive to variations in temperature, adding that oxygen levels in the lake were normal.",
+    "Officials say the recent problems are the result of rain, which caused the lake's temperature to plummet .",
+    "The city's waste management company have been brought in to clear the lake of the dead fish .",
+    "Vultures feed on the dead fish on the shore of the Rodrigo de Freitas lagoon in Rio de Janeiro on Monday .",
+    "Previous fish die-offs in the lake have been blamed on pollution-related drops in oxygen levels.",
+    "The cause of February die-off of twaite shad in the Guanabara Bay, where the Olympic sailing events are to be held, were not known.",
+    "Rio's water quality has become a contentious topic ahead of the 2016 Olympics.",
+    "Authorities had pledged to clean up some of the waterways including the Guanabara Bay ahead of the games but now admit those promises won't be met, sparking sailors to voice worries about possible health and safety threats posed by competing in the sewage and garbage-filled waters.",
+    "Residents concerned about the water quality of a canal in the Rio neighborhood of Recreio staged a protest on Sunday.",
+    "Hundreds of demonstrators linked arms along the Canal das Taxas, which is filled with raw sewage from nearby condominiums.",
+    "The canal flows into a lagoon where the Olympic Park is being built."
+   ],
+   "lead3": {
+    "summary": "Dead fish have continued to wash up on the banks of a Rio de Janeiro lake that is scheduled to hold Olympic rowing competitions during the 2016 games. Fish die-offs are a frequent occurrence in Rio's waterways, which are choked with raw sewage and rubbish. The latest incident, affecting thousands of small silvery fish called twaite shad, began several days ago at the Rodrigo de Freitas lake, where the Olympic canoeing and rowing events are to be held.",
+    "summary_sents": [
+     "Dead fish have continued to wash up on the banks of a Rio de Janeiro lake that is scheduled to hold Olympic rowing competitions during the 2016 games.",
+     "Fish die-offs are a frequent occurrence in Rio's waterways, which are choked with raw sewage and rubbish.",
+     "The latest incident, affecting thousands of small silvery fish called twaite shad, began several days ago at the Rodrigo de Freitas lake, where the Olympic canoeing and rowing events are to be held."
+    ],
+    "indices": [
+     0,
+     1,
+     2
+    ],
+    "latency": 3.1999998100218363e-06,
+    "metrics": {
+     "words": 80,
+     "compression": 5.4125,
+     "novel_1": 0.0,
+     "novel_2": 0.0,
+     "novel_3": 0.0,
+     "repeated_2": 0.0,
+     "repeated_3": 0.0,
+     "latency": 3.1999998100218363e-06
+    },
+    "rouge": {
+     "rouge1": 54.28571428571427,
+     "rouge2": 23.188405797101446,
+     "rougeL": 50.0
+    }
+   },
+   "extractive": {
+    "summary": "Dead fish have continued to wash up on the banks of a Rio de Janeiro lake that is scheduled to hold Olympic rowing competitions during the 2016 games. Fish die-offs are a frequent occurrence in Rio's waterways, which are choked with raw sewage and rubbish. The Rodrigo de Freitas lagoon will hold the Brazil 2016 Olympics rowing and canoe competitions .",
+    "summary_sents": [
+     "Dead fish have continued to wash up on the banks of a Rio de Janeiro lake that is scheduled to hold Olympic rowing competitions during the 2016 games.",
+     "Fish die-offs are a frequent occurrence in Rio's waterways, which are choked with raw sewage and rubbish.",
+     "The Rodrigo de Freitas lagoon will hold the Brazil 2016 Olympics rowing and canoe competitions ."
+    ],
+    "indices": [
+     0,
+     1,
+     3
+    ],
+    "blocked": [],
+    "scores": [
+     0.2848704755306244,
+     0.37284353375434875,
+     0.2568046450614929,
+     0.3498913645744324,
+     0.23120082914829254,
+     0.10432188957929611,
+     0.04862670972943306,
+     0.014510164968669415,
+     0.06794654577970505,
+     0.01830809749662876,
+     0.11152774840593338,
+     0.10294285416603088,
+     0.09764619171619415,
+     0.15169258415699005,
+     0.016784025356173515,
+     0.05380725488066673,
+     0.01362218800932169,
+     0.013549486175179482,
+     null,
+     null
+    ],
+    "method": "BertSumExt-style (frozen BERT + 2-layer Transformer head)",
+    "trained": true,
+    "latency": 0.04099659999974392,
+    "metrics": {
+     "words": 62,
+     "compression": 6.983870967741935,
+     "novel_1": 0.0,
+     "novel_2": 0.0,
+     "novel_3": 0.0,
+     "repeated_2": 0.0,
+     "repeated_3": 0.0,
+     "latency": 0.04099659999974392
+    },
+    "rouge": {
+     "rouge1": 57.377049180327866,
+     "rouge2": 30.000000000000004,
+     "rougeL": 52.459016393442624
+    }
+   },
+   "abstractive": {
+    "BART-large-CNN": {
+     "chunked": false,
+     "n_chunks": 1,
+     "chunk_summaries": [],
+     "n_input_tokens": 516,
+     "model": "facebook/bart-large-cnn",
+     "summary": "The Rodrigo de Freitas lagoon will hold the Brazil 2016 Olympics rowing and canoe competitions. Currently, the lake is littered with thousands of dead fish due to the raw sewage and rubbish within it. Officials say the recent problems are the result of rain, which caused the lake's temperature to plummet.",
+     "latency": 1.2020055000002685,
+     "metrics": {
+      "words": 52,
+      "compression": 8.326923076923077,
+      "novel_1": 0.0,
+      "novel_2": 0.0,
+      "novel_3": 0.0,
+      "repeated_2": 2.0408163265306123,
+      "repeated_3": 0.0,
+      "latency": 1.2020055000002685
+     },
+     "rouge": {
+      "rouge1": 66.07142857142857,
+      "rouge2": 38.18181818181818,
+      "rougeL": 60.71428571428571
+     },
+     "factcheck": {
+      "flags": [],
+      "backend": "spaCy"
+     }
+    },
+    "DistilBART-CNN (fast)": {
+     "chunked": false,
+     "n_chunks": 1,
+     "chunk_summaries": [],
+     "n_input_tokens": 516,
+     "model": "sshleifer/distilbart-cnn-12-6",
+     "summary": "Fish die-offs are a frequent occurrence in Rio's waterways, which are choked with raw sewage and rubbish . The Rodrigo de Freitas lagoon will hold the Brazil 2016 Olympics rowing and canoe competitions . The city's waste management company have been brought in to clear the lake of the dead fish .",
+     "latency": 0.9611614000000372,
+     "metrics": {
+      "words": 52,
+      "compression": 8.326923076923077,
+      "novel_1": 0.0,
+      "novel_2": 0.0,
+      "novel_3": 0.0,
+      "repeated_2": 0.0,
+      "repeated_3": 0.0,
+      "latency": 0.9611614000000372
+     },
+     "rouge": {
+      "rouge1": 62.500000000000014,
+      "rouge2": 36.36363636363637,
+      "rougeL": 60.71428571428571
+     },
+     "factcheck": {
+      "flags": [],
+      "backend": "spaCy"
+     }
+    }
+   },
+   "id": "4bb88c2bacdf7ecf3f831034fe01d9e9636ea114",
+   "title": "Dead fish have continued to wash up on the banks of a Rio de Janeiro lake...",
+   "n_bart_tokens": 516,
+   "n_flags": {
+    "BART-large-CNN": 0,
+    "DistilBART-CNN (fast)": 0
+   }
+  },
+  {
+   "article": "New York (CNN)A suburban New York cardiologist has been charged in connection with a failed scheme to have another physician hurt or killed, according to prosecutors. Dr. Anthony Moschetto, 54, pleaded not guilty Wednesday to criminal solicitation, conspiracy, burglary, arson, criminal prescription sale and weapons charges in connection to what prosecutors called a plot to take out a rival doctor on Long Island. He was released after posting $2 million bond and surrendering his passport. Two other men -- identified as James Chmela, 43, and James Kalamaras, 41 -- were named as accomplices, according to prosecutors. They pleaded not guilty in Nassau County District Court, according to authorities. Both were released on bail. Requests for comment from attorneys representing Moschetto and Chmela were not returned. It's unclear whether Kalamaras has retained an attorney. Moschetto's attorney, Randy Zelin, said Wednesday that his client \"will be defending himself vigorously,\" the New York Post reported. \"Doctors are supposed to ensure the health and wellbeing of people, but Dr. Moschetto is alleged to have replaced that responsibility with brazen, callous and criminal acts,\" Acting Nassau District Attorney Madeline Singas said in a statement. Police officers allegedly discovered approximately 100 weapons at Moschetto's home, including hand grenades, high-capacity magazines and knives. Many of the weapons were found in a hidden room behind a switch-activated bookshelf, according to prosecutors. The investigation began back in December, when undercover officers began buying heroin and oxycodone pills from Moschetto in what was initially a routine investigation into the sale of prescription drugs, officials said. During the course of the undercover operation, however, Moschetto also sold the officers two semiautomatic assault weapons as well as ammunition, prosecutors said. Moschetto allegedly told officers during one buy that he needed dynamite to \"blow up a building.\" He later said he no longer needed the dynamite because a friend was setting fire to the building instead. Kalamaras and Chmela are believed to have taken part in the arson, according to prosecutors. \"The fire damaged but did not destroy the office of another cardiologist whose relationship with Dr. Moschetto had soured due to a professional dispute,\" according to the statement from the district attorney's office. Moschetto allegedly gave an informant and undercover detective blank prescriptions and cash for the assault and killing of the fellow cardiologist, according to prosecutors. He also requested that the rival's wife be assaulted if she happened to be present, authorities said. \"He was willing to pay $5,000 to have him beaten and put in a hospital for a few months, and then he said he would pay $20,000 to have him killed,\" said Assistant District Attorney Anne Donnelly, reported CNN affiliate WCBS. The three men are to appear in Nassau County District Court on Friday.",
+   "reference": "Dr. Anthony Moschetto, 54, arrested for selling drugs and  weapons, prosecutors say .\nAuthorities allege Moschetto hired accomplices to burn down the practice of former associate .\nAttorney says client will \"vigorously\" defend himself .",
+   "n_article_words": 464,
+   "sentences": [
+    "New York (CNN)A suburban New York cardiologist has been charged in connection with a failed scheme to have another physician hurt or killed, according to prosecutors.",
+    "Dr. Anthony Moschetto, 54, pleaded not guilty Wednesday to criminal solicitation, conspiracy, burglary, arson, criminal prescription sale and weapons charges in connection to what prosecutors called a plot to take out a rival doctor on Long Island.",
+    "He was released after posting $2 million bond and surrendering his passport.",
+    "Two other men -- identified as James Chmela, 43, and James Kalamaras, 41 -- were named as accomplices, according to prosecutors.",
+    "They pleaded not guilty in Nassau County District Court, according to authorities.",
+    "Both were released on bail.",
+    "Requests for comment from attorneys representing Moschetto and Chmela were not returned.",
+    "It's unclear whether Kalamaras has retained an attorney.",
+    "Moschetto's attorney, Randy Zelin, said Wednesday that his client \"will be defending himself vigorously,\" the New York Post reported.",
+    "\"Doctors are supposed to ensure the health and wellbeing of people, but Dr. Moschetto is alleged to have replaced that responsibility with brazen, callous and criminal acts,\" Acting Nassau District Attorney Madeline Singas said in a statement.",
+    "Police officers allegedly discovered approximately 100 weapons at Moschetto's home, including hand grenades, high-capacity magazines and knives.",
+    "Many of the weapons were found in a hidden room behind a switch-activated bookshelf, according to prosecutors.",
+    "The investigation began back in December, when undercover officers began buying heroin and oxycodone pills from Moschetto in what was initially a routine investigation into the sale of prescription drugs, officials said.",
+    "During the course of the undercover operation, however, Moschetto also sold the officers two semiautomatic assault weapons as well as ammunition, prosecutors said.",
+    "Moschetto allegedly told officers during one buy that he needed dynamite to \"blow up a building.\"",
+    "He later said he no longer needed the dynamite because a friend was setting fire to the building instead.",
+    "Kalamaras and Chmela are believed to have taken part in the arson, according to prosecutors.",
+    "\"The fire damaged but did not destroy the office of another cardiologist whose relationship with Dr. Moschetto had soured due to a professional dispute,\" according to the statement from the district attorney's office.",
+    "Moschetto allegedly gave an informant and undercover detective blank prescriptions and cash for the assault and killing of the fellow cardiologist, according to prosecutors.",
+    "He also requested that the rival's wife be assaulted if she happened to be present, authorities said.",
+    "\"He was willing to pay $5,000 to have him beaten and put in a hospital for a few months, and then he said he would pay $20,000 to have him killed,\" said Assistant District Attorney Anne Donnelly, reported CNN affiliate WCBS.",
+    "The three men are to appear in Nassau County District Court on Friday."
+   ],
+   "lead3": {
+    "summary": "New York (CNN)A suburban New York cardiologist has been charged in connection with a failed scheme to have another physician hurt or killed, according to prosecutors. Dr. Anthony Moschetto, 54, pleaded not guilty Wednesday to criminal solicitation, conspiracy, burglary, arson, criminal prescription sale and weapons charges in connection to what prosecutors called a plot to take out a rival doctor on Long Island. He was released after posting $2 million bond and surrendering his passport.",
+    "summary_sents": [
+     "New York (CNN)A suburban New York cardiologist has been charged in connection with a failed scheme to have another physician hurt or killed, according to prosecutors.",
+     "Dr. Anthony Moschetto, 54, pleaded not guilty Wednesday to criminal solicitation, conspiracy, burglary, arson, criminal prescription sale and weapons charges in connection to what prosecutors called a plot to take out a rival doctor on Long Island.",
+     "He was released after posting $2 million bond and surrendering his passport."
+    ],
+    "indices": [
+     0,
+     1,
+     2
+    ],
+    "latency": 4.800000169780105e-06,
+    "metrics": {
+     "words": 76,
+     "compression": 6.105263157894737,
+     "novel_1": 0.0,
+     "novel_2": 0.0,
+     "novel_3": 0.0,
+     "repeated_2": 2.73972602739726,
+     "repeated_3": 0.0,
+     "latency": 4.800000169780105e-06
+    },
+    "rouge": {
+     "rouge1": 14.814814814814813,
+     "rouge2": 7.547169811320755,
+     "rougeL": 14.814814814814813
+    }
+   },
+   "extractive": {
+    "summary": "Dr. Anthony Moschetto, 54, pleaded not guilty Wednesday to criminal solicitation, conspiracy, burglary, arson, criminal prescription sale and weapons charges in connection to what prosecutors called a plot to take out a rival doctor on Long Island. He was released after posting $2 million bond and surrendering his passport. Two other men -- identified as James Chmela, 43, and James Kalamaras, 41 -- were named as accomplices, according to prosecutors.",
+    "summary_sents": [
+     "Dr. Anthony Moschetto, 54, pleaded not guilty Wednesday to criminal solicitation, conspiracy, burglary, arson, criminal prescription sale and weapons charges in connection to what prosecutors called a plot to take out a rival doctor on Long Island.",
+     "He was released after posting $2 million bond and surrendering his passport.",
+     "Two other men -- identified as James Chmela, 43, and James Kalamaras, 41 -- were named as accomplices, according to prosecutors."
+    ],
+    "indices": [
+     1,
+     2,
+     3
+    ],
+    "blocked": [],
+    "scores": [
+     0.3133937120437622,
+     0.4013010561466217,
+     0.3524746298789978,
+     0.3829757869243622,
+     0.133863165974617,
+     0.19644059240818024,
+     0.033547017723321915,
+     0.0730944350361824,
+     0.15455104410648346,
+     0.025388607755303383,
+     0.06845905631780624,
+     0.015185369178652763,
+     0.042321112006902695,
+     0.02799305133521557,
+     0.03185948356986046,
+     0.02704470418393612,
+     0.026516340672969818,
+     0.025252066552639008,
+     null,
+     null,
+     null,
+     null
+    ],
+    "method": "BertSumExt-style (frozen BERT + 2-layer Transformer head)",
+    "trained": true,
+    "latency": 0.023916300000109914,
+    "metrics": {
+     "words": 68,
+     "compression": 6.823529411764706,
+     "novel_1": 0.0,
+     "novel_2": 0.0,
+     "novel_3": 0.0,
+     "repeated_2": 0.0,
+     "repeated_3": 0.0,
+     "latency": 0.023916300000109914
+    },
+    "rouge": {
+     "rouge1": 18.000000000000004,
+     "rouge2": 8.16326530612245,
+     "rougeL": 18.000000000000004
+    }
+   },
+   "abstractive": {
+    "BART-large-CNN": {
+     "chunked": false,
+     "n_chunks": 1,
+     "chunk_summaries": [],
+     "n_input_tokens": 597,
+     "model": "facebook/bart-large-cnn",
+     "summary": "Dr. Anthony Moschetto, 54, pleads not guilty to criminal solicitation, conspiracy, burglary, arson, criminal prescription sale and weapons charges. He was released after posting $2 million bond and surrendering his passport. Two other men -- identified as James Chmela, 43, and James Kalamaras, 41 -- were named as accomplices.",
+     "latency": 1.7241913000002569,
+     "metrics": {
+      "words": 47,
+      "compression": 9.872340425531915,
+      "novel_1": 2.127659574468085,
+      "novel_2": 6.818181818181818,
+      "novel_3": 12.195121951219512,
+      "repeated_2": 0.0,
+      "repeated_3": 0.0,
+      "latency": 1.7241913000002569
+     },
+     "rouge": {
+      "rouge1": 20.253164556962027,
+      "rouge2": 10.38961038961039,
+      "rougeL": 20.253164556962027
+     },
+     "factcheck": {
+      "flags": [],
+      "backend": "spaCy"
+     }
+    },
+    "DistilBART-CNN (fast)": {
+     "chunked": false,
+     "n_chunks": 1,
+     "chunk_summaries": [],
+     "n_input_tokens": 597,
+     "model": "sshleifer/distilbart-cnn-12-6",
+     "summary": "Dr. Anthony Moschetto pleads not guilty to criminal solicitation, conspiracy, burglary, arson, prescription sale and weapons charges . He was released after posting $2 million bond and surrendering his passport . Two other men, James Chmela and James Kalamaras, were named as accomplices, according to prosecutors .",
+     "latency": 0.9661657000001469,
+     "metrics": {
+      "words": 44,
+      "compression": 10.545454545454545,
+      "novel_1": 2.272727272727273,
+      "novel_2": 17.073170731707318,
+      "novel_3": 34.21052631578947,
+      "repeated_2": 0.0,
+      "repeated_3": 0.0,
+      "latency": 0.9661657000001469
+     },
+     "rouge": {
+      "rouge1": 21.05263157894737,
+      "rouge2": 8.108108108108109,
+      "rougeL": 21.05263157894737
+     },
+     "factcheck": {
+      "flags": [],
+      "backend": "spaCy"
+     }
+    }
+   },
+   "id": "11b3565b7bd3e53c7740ebf580758d58af7891c6",
+   "title": "New York (CNN)A suburban New York cardiologist has been charged in...",
+   "n_bart_tokens": 597,
+   "n_flags": {
+    "BART-large-CNN": 0,
+    "DistilBART-CNN (fast)": 0
+   }
+  },
+  {
+   "article": "Kellogg's is the latest US owned multinational to be embroiled in the controversy over tax avoidance in Britain . Kellogg's is the latest US owned multinational to be embroiled in the controversy over tax avoidance in Britain. The cereal giant warned shareholders its profits could be hit by government moves to close tax loopholes. Kellogg’s, which makes hundreds of millions of pounds each year from sales to British families, uses a complex web of companies to do business here. Its two main UK subsidiaries are owned by an operation based in the Republic of Ireland, where corporation tax is 12.5 per cent, compared with the UK’s 20 per cent. The latest figures show Kellogg’s effectively paid no corporation tax in Britain in 2013, as payments to HMRC by some of its offshoots were wiped out by tax credits elsewhere. These tax manoeuvres are perfectly legal. Kellogg’s has so far not faced criticism for its tax affairs in Britain, unlike Google, Amazon and Starbucks, which have come under fire for paying a minimal amount to the Exchequer despite huge sales here. But in its latest annual report the cereal-maker, whose worldwide sales last year hit £9.8billion, admitted ‘contemplated changes in the UK and other countries’ to ‘long established tax principles’ could have a ‘material impact’ on its business. It added VAT increases and other changes ‘may have an adverse effect on our business’. Kellogg’s has produced cereals in the UK since 1938, and says it has several hundred employees here. It sells in the UK through two main subsidiaries owned by Irish-based Kellogg Europe Trading Ltd. One is Kellogg Marketing & Sales, which distributes breakfast food for Irish and Swiss-registered companies, and reported sales of £622million to Britons in 2013. The second, Kellogg Company of Great Britain, makes cereals under contract for an Irish-based operation. These two subsidiaries paid corporation tax of £8.4million on profits of nearly £50million in 2013. Kellogg’s also has six Luxembourg registered companies which collectively paid corporation tax of £210,000 on profits of about £57million – a rate of 0.37 per cent. But this £210,000 and the £8.4million were offset by an £11.8million tax credit at another UK-registered operation, Kellogg Group Ltd. Kellogg’s said comments in its annual report are not related to Chancellor George Osborne’s ‘diverted profits tax’ – which aims to snare companies that shunt profits overseas with the main purpose of saving tax . A Kellogg’s spokesman confirmed the figures but said some profits through the Luxembourg business would relate to companies outside the UK. He declined to comment on whether Kellogg’s accepted it had in effect paid zero corporation tax in Britain, but said it is ‘a responsible taxpayer’. Kellogg’s said comments in its annual report are not related to Chancellor George Osborne’s ‘diverted profits tax’ – which aims to snare companies that shunt profits overseas with the main purpose of saving tax. Richard Murphy, of Tax Research UK, said: ‘It looks as if Kellogg’s is trading in similar fashion to many of the better known tax avoiders.’",
+   "reference": "Kellogg’s makes hundreds of millions from annual sales to British families .\nBut latest figures show it effectively paid no corporation tax in UK in 2013 .\nUses complex legal tax manoeuvres involving subsidiary companies .\nBut new measures introduced by George Osborne set to close loophole .",
+   "n_article_words": 527,
+   "sentences": [
+    "Kellogg's is the latest US owned multinational to be embroiled in the controversy over tax avoidance in Britain .",
+    "Kellogg's is the latest US owned multinational to be embroiled in the controversy over tax avoidance in Britain.",
+    "The cereal giant warned shareholders its profits could be hit by government moves to close tax loopholes.",
+    "Kellogg’s, which makes hundreds of millions of pounds each year from sales to British families, uses a complex web of companies to do business here.",
+    "Its two main UK subsidiaries are owned by an operation based in the Republic of Ireland, where corporation tax is 12.5 per cent, compared with the UK’s 20 per cent.",
+    "The latest figures show Kellogg’s effectively paid no corporation tax in Britain in 2013, as payments to HMRC by some of its offshoots were wiped out by tax credits elsewhere.",
+    "These tax manoeuvres are perfectly legal.",
+    "Kellogg’s has so far not faced criticism for its tax affairs in Britain, unlike Google, Amazon and Starbucks, which have come under fire for paying a minimal amount to the Exchequer despite huge sales here.",
+    "But in its latest annual report the cereal-maker, whose worldwide sales last year hit £9.8billion, admitted ‘contemplated changes in the UK and other countries’ to ‘long established tax principles’ could have a ‘material impact’ on its business.",
+    "It added VAT increases and other changes ‘may have an adverse effect on our business’.",
+    "Kellogg’s has produced cereals in the UK since 1938, and says it has several hundred employees here.",
+    "It sells in the UK through two main subsidiaries owned by Irish-based Kellogg Europe Trading Ltd. One is Kellogg Marketing & Sales, which distributes breakfast food for Irish and Swiss-registered companies, and reported sales of £622million to Britons in 2013.",
+    "The second, Kellogg Company of Great Britain, makes cereals under contract for an Irish-based operation.",
+    "These two subsidiaries paid corporation tax of £8.4million on profits of nearly £50million in 2013.",
+    "Kellogg’s also has six Luxembourg registered companies which collectively paid corporation tax of £210,000 on profits of about £57million – a rate of 0.37 per cent.",
+    "But this £210,000 and the £8.4million were offset by an £11.8million tax credit at another UK-registered operation, Kellogg Group Ltd. Kellogg’s said comments in its annual report are not related to Chancellor George Osborne’s ‘diverted profits tax’ – which aims to snare companies that shunt profits overseas with the main purpose of saving tax .",
+    "A Kellogg’s spokesman confirmed the figures but said some profits through the Luxembourg business would relate to companies outside the UK.",
+    "He declined to comment on whether Kellogg’s accepted it had in effect paid zero corporation tax in Britain, but said it is ‘a responsible taxpayer’.",
+    "Kellogg’s said comments in its annual report are not related to Chancellor George Osborne’s ‘diverted profits tax’ – which aims to snare companies that shunt profits overseas with the main purpose of saving tax.",
+    "Richard Murphy, of Tax Research UK, said: ‘It looks as if Kellogg’s is trading in similar fashion to many of the better known tax avoiders.’"
+   ],
+   "lead3": {
+    "summary": "Kellogg's is the latest US owned multinational to be embroiled in the controversy over tax avoidance in Britain . Kellogg's is the latest US owned multinational to be embroiled in the controversy over tax avoidance in Britain. The cereal giant warned shareholders its profits could be hit by government moves to close tax loopholes.",
+    "summary_sents": [
+     "Kellogg's is the latest US owned multinational to be embroiled in the controversy over tax avoidance in Britain .",
+     "Kellogg's is the latest US owned multinational to be embroiled in the controversy over tax avoidance in Britain.",
+     "The cereal giant warned shareholders its profits could be hit by government moves to close tax loopholes."
+    ],
+    "indices": [
+     0,
+     1,
+     2
+    ],
+    "latency": 6.100000064179767e-06,
+    "metrics": {
+     "words": 55,
+     "compression": 9.581818181818182,
+     "novel_1": 0.0,
+     "novel_2": 0.0,
+     "novel_3": 0.0,
+     "repeated_2": 34.61538461538461,
+     "repeated_3": 34.69387755102041,
+     "latency": 6.100000064179767e-06
+    },
+    "rouge": {
+     "rouge1": 23.999999999999996,
+     "rouge2": 4.081632653061225,
+     "rougeL": 22.000000000000004
+    }
+   },
+   "extractive": {
+    "summary": "Kellogg's is the latest US owned multinational to be embroiled in the controversy over tax avoidance in Britain. The cereal giant warned shareholders its profits could be hit by government moves to close tax loopholes. Its two main UK subsidiaries are owned by an operation based in the Republic of Ireland, where corporation tax is 12.5 per cent, compared with the UK’s 20 per cent.",
+    "summary_sents": [
+     "Kellogg's is the latest US owned multinational to be embroiled in the controversy over tax avoidance in Britain.",
+     "The cereal giant warned shareholders its profits could be hit by government moves to close tax loopholes.",
+     "Its two main UK subsidiaries are owned by an operation based in the Republic of Ireland, where corporation tax is 12.5 per cent, compared with the UK’s 20 per cent."
+    ],
+    "indices": [
+     1,
+     2,
+     4
+    ],
+    "blocked": [
+     0
+    ],
+    "scores": [
+     0.27938345074653625,
+     0.34802043437957764,
+     0.1890590339899063,
+     0.1754920482635498,
+     0.23169346153736115,
+     0.10089334845542908,
+     0.02207670547068119,
+     0.06897803395986557,
+     0.054745011031627655,
+     0.02366892248392105,
+     0.059732936322689056,
+     0.09525508433580399,
+     0.06464195251464844,
+     0.09574637562036514,
+     0.06568831205368042,
+     0.04376210272312164,
+     null,
+     null,
+     null,
+     null
+    ],
+    "method": "BertSumExt-style (frozen BERT + 2-layer Transformer head)",
+    "trained": true,
+    "latency": 0.025164199999835546,
+    "metrics": {
+     "words": 68,
+     "compression": 7.75,
+     "novel_1": 0.0,
+     "novel_2": 0.0,
+     "novel_3": 0.0,
+     "repeated_2": 3.076923076923077,
+     "repeated_3": 0.0,
+     "latency": 0.025164199999835546
+    },
+    "rouge": {
+     "rouge1": 28.31858407079646,
+     "rouge2": 5.405405405405405,
+     "rougeL": 23.008849557522122
+    }
+   },
+   "abstractive": {
+    "BART-large-CNN": {
+     "chunked": false,
+     "n_chunks": 1,
+     "chunk_summaries": [],
+     "n_input_tokens": 700,
+     "model": "facebook/bart-large-cnn",
+     "summary": "Kellogg's is the latest US owned multinational to be embroiled in the controversy over tax avoidance in Britain. The cereal giant warned shareholders its profits could be hit by government moves to close tax loopholes. Kellogg’s uses a complex web of companies to do business here. Its two main UK subsidiaries are owned by an operation based in the Republic of Ireland, where corporation tax is 12.5%.",
+     "latency": 1.7189554000001408,
+     "metrics": {
+      "words": 70,
+      "compression": 7.5285714285714285,
+      "novel_1": 0.0,
+      "novel_2": 1.5151515151515151,
+      "novel_3": 3.225806451612903,
+      "repeated_2": 3.0303030303030303,
+      "repeated_3": 0.0,
+      "latency": 1.7189554000001408
+     },
+     "rouge": {
+      "rouge1": 33.04347826086956,
+      "rouge2": 5.3097345132743365,
+      "rougeL": 27.82608695652174
+     },
+     "factcheck": {
+      "flags": [],
+      "backend": "spaCy"
+     }
+    },
+    "DistilBART-CNN (fast)": {
+     "chunked": false,
+     "n_chunks": 1,
+     "chunk_summaries": [],
+     "n_input_tokens": 700,
+     "model": "sshleifer/distilbart-cnn-12-6",
+     "summary": "Kellogg’s effectively paid no corporation tax in Britain in 2013, as payments to HMRC by some of its offshoots were wiped out by tax credits elsewhere . The cereal giant makes hundreds of millions of pounds each year from sales to British families . Its two main UK subsidiaries are owned by an operation based in the Republic of Ireland .",
+     "latency": 0.8947269000000233,
+     "metrics": {
+      "words": 59,
+      "compression": 8.932203389830509,
+      "novel_1": 0.0,
+      "novel_2": 1.7857142857142858,
+      "novel_3": 3.7735849056603774,
+      "repeated_2": 0.0,
+      "repeated_3": 0.0,
+      "latency": 0.8947269000000233
+     },
+     "rouge": {
+      "rouge1": 46.15384615384615,
+      "rouge2": 25.49019607843137,
+      "rougeL": 46.15384615384615
+     },
+     "factcheck": {
+      "flags": [],
+      "backend": "spaCy"
+     }
+    }
+   },
+   "id": "c0e7fa000674cc4d3fddcac9ead1e92619b3d92e",
+   "title": "Kellogg's is the latest US owned multinational to be embroiled in the...",
+   "n_bart_tokens": 700,
+   "n_flags": {
+    "BART-large-CNN": 0,
+    "DistilBART-CNN (fast)": 0
+   }
+  },
+  {
+   "article": "Nairobi (CNN)An elite police commando unit waited hours for transport from Nairobi, Kenya, to Garissa, where Al-Shabaab terrorists had taken over a university on April 2, according to one of the commandos who participated in the response operation. The commando asked not to be identified for fear of reprisals and because he was not authorized to speak. Al-Shabaab slaughtered 147 people at the school. Of the fatalities, 142 were students at the university, and the rest were security forces and campus security. At 7:00 a.m. local time, the response team was told to assemble for a mission to Garissa, the police commando told CNN. At 8:00 a.m., he said, the team was told there were no police aircraft available to take them. A reserve team was then sent by road, while the main commando team waited in Nairobi for air transport, he said. Once told aircraft would be available, it took the commando team nearly two hours to travel the roughly 22 miles (35 kilometers) to the airport because of the heavy traffic, the commando source said. But Kenya's Police Air Wing Chief Col. Rogers Mbithi denied that his unit caused any delay in the response to the university attack. Mbithi told CNN two fixed wing aircraft were ready and waiting for the commandos 45 minutes before the police commandos were ready to depart around 12:30 p.m. local time. Government names Kenya attack mastermind . Mbithi conceded that one of the two aircraft ultimately used to transport the commandos to Garissa left Nairobi at 7:30 a.m. to fly to Mombasa on a scheduled flight, hours after the Garissa terror attack began. That plane picked up the chief's daughter-in-law and two children, and returned to Nairobi at its scheduled time of 11:39 a.m., Mbithi said. The first aircraft carrying police commandos eventually departed for Garissa at 12:30 p.m., followed by a second aircraft about 10 minutes later, Mbithi said. Inside college dorm's scene of slaughter . After arriving in Garissa by plane, the commando team rehearsed the assault on the university compound for about two-and-a-half hours, the commando source told CNN. The police assault to retake the university compound began around 5 p.m. and lasted about 15 minutes. One commando was killed in the assault. All four Al-Shabaab attackers were killed. Another law enforcement source told CNN that by 7:00 a.m. the Al-Shabaab terrorists had already killed most of the students, saying: \"It was never a hostage situation.\" The problems plaguing Kenya's security efforts . Other Kenyan officials have previously defended the response to the university attack. Manoah Esipisu, a spokesman for Kenya's President and deputy president, told CNN last week that in emergency situations there is always criticism regarding whether governments reacted as fast as they could have or should have. \"With the benefit of hindsight, you can always say things could have been done better,\" he said. Kenyan authorities saved a lot of students and \"got the job done,\" he said. Foreign Minister Amina Mohamed told CNN the response was sufficient and denied reports that it was the elite rapid response team alone that brought an end to the situation. \"We have a military garrison in Garissa, and the work began immediately after the attack was reported and continued for a number of hours until we were able to rescue 663 students of the 800 students that had been taken hostage by these terrorists. So the response was adequate,\" she said. Lillian Leposo reported in Nairobi. Lonzo Cook reported in Atlanta. CNN's Jethro Mullen also contributed to this report.",
+   "reference": "Commando says air transport was delayed for hours as Al-Shabaab forces slaughtered students .\nOn April 2, 147 were killed at a university in Garissa, Kenya, most were students .",
+   "n_article_words": 618,
+   "sentences": [
+    "Nairobi (CNN)An elite police commando unit waited hours for transport from Nairobi, Kenya, to Garissa, where Al-Shabaab terrorists had taken over a university on April 2, according to one of the commandos who participated in the response operation.",
+    "The commando asked not to be identified for fear of reprisals and because he was not authorized to speak.",
+    "Al-Shabaab slaughtered 147 people at the school.",
+    "Of the fatalities, 142 were students at the university, and the rest were security forces and campus security.",
+    "At 7:00 a.m. local time, the response team was told to assemble for a mission to Garissa, the police commando told CNN.",
+    "At 8:00 a.m., he said, the team was told there were no police aircraft available to take them.",
+    "A reserve team was then sent by road, while the main commando team waited in Nairobi for air transport, he said.",
+    "Once told aircraft would be available, it took the commando team nearly two hours to travel the roughly 22 miles (35 kilometers) to the airport because of the heavy traffic, the commando source said.",
+    "But Kenya's Police Air Wing Chief Col. Rogers Mbithi denied that his unit caused any delay in the response to the university attack.",
+    "Mbithi told CNN two fixed wing aircraft were ready and waiting for the commandos 45 minutes before the police commandos were ready to depart around 12:30 p.m. local time.",
+    "Government names Kenya attack mastermind .",
+    "Mbithi conceded that one of the two aircraft ultimately used to transport the commandos to Garissa left Nairobi at 7:30 a.m. to fly to Mombasa on a scheduled flight, hours after the Garissa terror attack began.",
+    "That plane picked up the chief's daughter-in-law and two children, and returned to Nairobi at its scheduled time of 11:39 a.m., Mbithi said.",
+    "The first aircraft carrying police commandos eventually departed for Garissa at 12:30 p.m., followed by a second aircraft about 10 minutes later, Mbithi said.",
+    "Inside college dorm's scene of slaughter .",
+    "After arriving in Garissa by plane, the commando team rehearsed the assault on the university compound for about two-and-a-half hours, the commando source told CNN.",
+    "The police assault to retake the university compound began around 5 p.m. and lasted about 15 minutes.",
+    "One commando was killed in the assault.",
+    "All four Al-Shabaab attackers were killed.",
+    "Another law enforcement source told CNN that by 7:00 a.m. the Al-Shabaab terrorists had already killed most of the students, saying: \"It was never a hostage situation.\"",
+    "The problems plaguing Kenya's security efforts .",
+    "Other Kenyan officials have previously defended the response to the university attack.",
+    "Manoah Esipisu, a spokesman for Kenya's President and deputy president, told CNN last week that in emergency situations there is always criticism regarding whether governments reacted as fast as they could have or should have.",
+    "\"With the benefit of hindsight, you can always say things could have been done better,\" he said.",
+    "Kenyan authorities saved a lot of students and \"got the job done,\" he said.",
+    "Foreign Minister Amina Mohamed told CNN the response was sufficient and denied reports that it was the elite rapid response team alone that brought an end to the situation.",
+    "\"We have a military garrison in Garissa, and the work began immediately after the attack was reported and continued for a number of hours until we were able to rescue 663 students of the 800 students that had been taken hostage by these terrorists.",
+    "So the response was adequate,\" she said.",
+    "Lillian Leposo reported in Nairobi.",
+    "Lonzo Cook reported in Atlanta.",
+    "CNN's Jethro Mullen also contributed to this report."
+   ],
+   "lead3": {
+    "summary": "Nairobi (CNN)An elite police commando unit waited hours for transport from Nairobi, Kenya, to Garissa, where Al-Shabaab terrorists had taken over a university on April 2, according to one of the commandos who participated in the response operation. The commando asked not to be identified for fear of reprisals and because he was not authorized to speak. Al-Shabaab slaughtered 147 people at the school.",
+    "summary_sents": [
+     "Nairobi (CNN)An elite police commando unit waited hours for transport from Nairobi, Kenya, to Garissa, where Al-Shabaab terrorists had taken over a university on April 2, according to one of the commandos who participated in the response operation.",
+     "The commando asked not to be identified for fear of reprisals and because he was not authorized to speak.",
+     "Al-Shabaab slaughtered 147 people at the school."
+    ],
+    "indices": [
+     0,
+     1,
+     2
+    ],
+    "latency": 3.600000127335079e-06,
+    "metrics": {
+     "words": 67,
+     "compression": 9.223880597014926,
+     "novel_1": 0.0,
+     "novel_2": 0.0,
+     "novel_3": 0.0,
+     "repeated_2": 1.5625,
+     "repeated_3": 0.0,
+     "latency": 3.600000127335079e-06
+    },
+    "rouge": {
+     "rouge1": 37.50000000000001,
+     "rouge2": 8.51063829787234,
+     "rougeL": 25.0
+    }
+   },
+   "extractive": {
+    "summary": "Nairobi (CNN)An elite police commando unit waited hours for transport from Nairobi, Kenya, to Garissa, where Al-Shabaab terrorists had taken over a university on April 2, according to one of the commandos who participated in the response operation. Al-Shabaab slaughtered 147 people at the school. Of the fatalities, 142 were students at the university, and the rest were security forces and campus security.",
+    "summary_sents": [
+     "Nairobi (CNN)An elite police commando unit waited hours for transport from Nairobi, Kenya, to Garissa, where Al-Shabaab terrorists had taken over a university on April 2, according to one of the commandos who participated in the response operation.",
+     "Al-Shabaab slaughtered 147 people at the school.",
+     "Of the fatalities, 142 were students at the university, and the rest were security forces and campus security."
+    ],
+    "indices": [
+     0,
+     2,
+     3
+    ],
+    "blocked": [],
+    "scores": [
+     0.4621138274669647,
+     0.15026938915252686,
+     0.4077395796775818,
+     0.3341474235057831,
+     0.06325481832027435,
+     0.08531439304351807,
+     0.1128503829240799,
+     0.12523242831230164,
+     0.11140041053295135,
+     0.08184545487165451,
+     0.018425973132252693,
+     0.09988388419151306,
+     0.03836972266435623,
+     0.04888681322336197,
+     0.011522749438881874,
+     0.03435029089450836,
+     0.06994534283876419,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null
+    ],
+    "method": "BertSumExt-style (frozen BERT + 2-layer Transformer head)",
+    "trained": true,
+    "latency": 0.025560000000041327,
+    "metrics": {
+     "words": 66,
+     "compression": 9.363636363636363,
+     "novel_1": 0.0,
+     "novel_2": 0.0,
+     "novel_3": 0.0,
+     "repeated_2": 4.761904761904762,
+     "repeated_3": 0.0,
+     "latency": 0.025560000000041327
+    },
+    "rouge": {
+     "rouge1": 44.21052631578947,
+     "rouge2": 10.752688172043012,
+     "rougeL": 31.57894736842105
+    }
+   },
+   "abstractive": {
+    "BART-large-CNN": {
+     "chunked": false,
+     "n_chunks": 1,
+     "chunk_summaries": [],
+     "n_input_tokens": 788,
+     "model": "facebook/bart-large-cnn",
+     "summary": "Kenya's Police Air Wing Chief Col. Rogers Mbithi denies his unit caused any delay in the response. Al-Shabaab slaughtered 147 people at the school. Of the fatalities, 142 were students at the university, and the rest were security forces and campus security.",
+     "latency": 1.0940055999999458,
+     "metrics": {
+      "words": 44,
+      "compression": 14.045454545454545,
+      "novel_1": 2.272727272727273,
+      "novel_2": 4.878048780487805,
+      "novel_3": 7.894736842105263,
+      "repeated_2": 2.4390243902439024,
+      "repeated_3": 0.0,
+      "latency": 1.0940055999999458
+     },
+     "rouge": {
+      "rouge1": 38.35616438356164,
+      "rouge2": 5.633802816901408,
+      "rougeL": 32.87671232876713
+     },
+     "factcheck": {
+      "flags": [],
+      "backend": "spaCy"
+     }
+    },
+    "DistilBART-CNN (fast)": {
+     "chunked": false,
+     "n_chunks": 1,
+     "chunk_summaries": [],
+     "n_input_tokens": 788,
+     "model": "sshleifer/distilbart-cnn-12-6",
+     "summary": "Police commando unit waited hours for transport from Nairobi to Garissa, source says . Al-Shabaab terrorists had taken over a university on April 2, killing 147 people . Kenya's Police Air Wing Chief Col. Rogers Mbithi denies that his unit caused any delay in the response to the attack .",
+     "latency": 0.8209512000003087,
+     "metrics": {
+      "words": 49,
+      "compression": 12.612244897959183,
+      "novel_1": 6.122448979591836,
+      "novel_2": 15.217391304347826,
+      "novel_3": 25.58139534883721,
+      "repeated_2": 0.0,
+      "repeated_3": 0.0,
+      "latency": 0.8209512000003087
+     },
+     "rouge": {
+      "rouge1": 48.717948717948715,
+      "rouge2": 10.526315789473685,
+      "rougeL": 30.76923076923077
+     },
+     "factcheck": {
+      "flags": [],
+      "backend": "spaCy"
+     }
+    }
+   },
+   "id": "9293926ad044ae6c714d2cf872a96614bce6c093",
+   "title": "Nairobi (CNN)An elite police commando unit waited hours for transport from...",
+   "n_bart_tokens": 788,
+   "n_flags": {
+    "BART-large-CNN": 0,
+    "DistilBART-CNN (fast)": 0
+   }
+  },
+  {
+   "article": "A young woman who thought she was doing her grocery alone made a surprising discovery after finding a mildly venomous snake curled up in her shopping trolley. The unnamed woman, from the Sunshine Coast, found an empty trolley in an underground car park at the supermarket giant Coles in Caboolture, north of Brisbane on Wednesday. She pushed the trolley up the escalator to do her shopping before realising the slithering brown tree snake had curled itself in the corner and was hitching a ride to the store. Sunshine Coast Snake Catchers 24/7 Richie Gilbert was called to remove the snake and release it back into the bushland just kilometres away. A young woman made a surprising discovering after finding a mildly venomous snake in her shopping trolley . Snake catcher Richie Gilbert came to the rescue and safely removed the sleepy little snake outside the store . 'The woman found it through a pile of trolleys downstairs and pushed it up the escalator before realising the sleepy little snake was there the whole time,' Mr Gilbert told Daily Mail Australia. 'She quickly alerted staff and they had a security guide standing 10 metres around it to keep an eye on it because they didn't know what type of snake it was. 'When I arrived, it wasn't causing any trouble, especially when I untangled it from the trolley.' As the weather begins to drop to cooler temperatures in Queensland, Mr Gilbert said brown tree snakes are nocturnal so they try to hide in warm areas. 'They usually try to find somewhere warm to sleep,' he said. 'It probably wanted to stay away from trouble and thought the trolleys were a good place to climb inside and hang there - it had no idea it was a trolley. Mr Gilbert later joked on his Facebook page: 'I told the snake to next time try coming through the delivery door out back. Haha.' The brown treet snake was safely removed from the trolley after it had a little adventure up an escalator . While brown tree snakes are known to kill their prey by chewing to inject venom, Mr Gilbert said they are not regarded as dangerous to humans. 'They're mildly venomous and I still don't advise anyone to pick it up,' Mr Gilbert said. 'Brown tree snakes are not a threat and won't react in a threatening way but if you do get bitten, a pressure bandage should be applied and seek medical attention - as a precaution as with all suspected snake bites. 'We had one situation where a dad thought it was a good idea to catch a snake inside his house and give it to his seven-year-old daughter to play with the next day because he thought it was harmless. 'Even though she was bitten and didn't show any signs of venom - I still advised him to take her to the hospital as a precautionary measure. 'But please, if you're not 100 percent certain about a snake - don't do what this person did.' Mr Richie said while they release venom on its prey, the snakes are not regarded as dangerous to humans . Mr Gilbert said brown tree snakes are harmless and nocturnal, so they try to hide in warm areas . When it doubt about spotting a snake, Mr Gilbert suggests the best thing to do in a situation is move away slowly and try to take a photograph from a safe distance. 'Send it to us and we can identify it for you and if it’s venomous or not - or whether we need to come out to catch it ourselves and relocate them,' he told Daily Mail Australia. 'If the snake is found inside a home in one of the rooms, it's best to close the room and pop a towel underneath the door and then call us - nothing worse than having someone run out and lock their entire house and then tell us that \"the snake is somewhere inside the house\". 'If you're in the garden and you step on a snake and it's in between your legs, just stand still because it'll eventually slither away. ‘Be smart about it because 90 percent of the time, people who are bitten are often trying to kill it or scare it away. ‘All snakes want to do is get away but if it doesn’t feel it can escape, it’ll strike – so be sensible when you spot them.’",
+   "reference": "A woman discovered a tree snake curled up inside a shopping trolley .\nSnake catcher Richie Gilbert was called to the rescue at Coles Caboolture .\nWhen he arrived, he managed to untangle the snake from the trolley .\nHe safely released it back into the bushland just kilometres away .\nMr Gilbert also gave Daily Mail readers his top tips to avoid getting bitten .",
+   "n_article_words": 750,
+   "sentences": [
+    "A young woman who thought she was doing her grocery alone made a surprising discovery after finding a mildly venomous snake curled up in her shopping trolley.",
+    "The unnamed woman, from the Sunshine Coast, found an empty trolley in an underground car park at the supermarket giant Coles in Caboolture, north of Brisbane on Wednesday.",
+    "She pushed the trolley up the escalator to do her shopping before realising the slithering brown tree snake had curled itself in the corner and was hitching a ride to the store.",
+    "Sunshine Coast Snake Catchers 24/7 Richie Gilbert was called to remove the snake and release it back into the bushland just kilometres away.",
+    "A young woman made a surprising discovering after finding a mildly venomous snake in her shopping trolley .",
+    "Snake catcher Richie Gilbert came to the rescue and safely removed the sleepy little snake outside the store .",
+    "'The woman found it through a pile of trolleys downstairs and pushed it up the escalator before realising the sleepy little snake was there the whole time,' Mr Gilbert told Daily Mail Australia.",
+    "'She quickly alerted staff and they had a security guide standing 10 metres around it to keep an eye on it because they didn't know what type of snake it was.",
+    "'When I arrived, it wasn't causing any trouble, especially when I untangled it from the trolley.'",
+    "As the weather begins to drop to cooler temperatures in Queensland, Mr Gilbert said brown tree snakes are nocturnal so they try to hide in warm areas.",
+    "'They usually try to find somewhere warm to sleep,' he said.",
+    "'It probably wanted to stay away from trouble and thought the trolleys were a good place to climb inside and hang there - it had no idea it was a trolley.",
+    "Mr Gilbert later joked on his Facebook page: 'I told the snake to next time try coming through the delivery door out back.",
+    "The brown treet snake was safely removed from the trolley after it had a little adventure up an escalator .",
+    "While brown tree snakes are known to kill their prey by chewing to inject venom, Mr Gilbert said they are not regarded as dangerous to humans.",
+    "'They're mildly venomous and I still don't advise anyone to pick it up,' Mr Gilbert said.",
+    "'Brown tree snakes are not a threat and won't react in a threatening way but if you do get bitten, a pressure bandage should be applied and seek medical attention - as a precaution as with all suspected snake bites.",
+    "'We had one situation where a dad thought it was a good idea to catch a snake inside his house and give it to his seven-year-old daughter to play with the next day because he thought it was harmless.",
+    "'Even though she was bitten and didn't show any signs of venom - I still advised him to take her to the hospital as a precautionary measure.",
+    "'But please, if you're not 100 percent certain about a snake - don't do what this person did.'",
+    "Mr Richie said while they release venom on its prey, the snakes are not regarded as dangerous to humans .",
+    "Mr Gilbert said brown tree snakes are harmless and nocturnal, so they try to hide in warm areas .",
+    "When it doubt about spotting a snake, Mr Gilbert suggests the best thing to do in a situation is move away slowly and try to take a photograph from a safe distance.",
+    "'Send it to us and we can identify it for you and if it’s venomous or not - or whether we need to come out to catch it ourselves and relocate them,' he told Daily Mail Australia.",
+    "'If the snake is found inside a home in one of the rooms, it's best to close the room and pop a towel underneath the door and then call us - nothing worse than having someone run out and lock their entire house and then tell us that \"the snake is somewhere inside the house\".",
+    "'If you're in the garden and you step on a snake and it's in between your legs, just stand still because it'll eventually slither away.",
+    "‘Be smart about it because 90 percent of the time, people who are bitten are often trying to kill it or scare it away.",
+    "‘All snakes want to do is get away but if it doesn’t feel it can escape, it’ll strike – so be sensible when you spot them.’"
+   ],
+   "lead3": {
+    "summary": "A young woman who thought she was doing her grocery alone made a surprising discovery after finding a mildly venomous snake curled up in her shopping trolley. The unnamed woman, from the Sunshine Coast, found an empty trolley in an underground car park at the supermarket giant Coles in Caboolture, north of Brisbane on Wednesday. She pushed the trolley up the escalator to do her shopping before realising the slithering brown tree snake had curled itself in the corner and was hitching a ride to the store.",
+    "summary_sents": [
+     "A young woman who thought she was doing her grocery alone made a surprising discovery after finding a mildly venomous snake curled up in her shopping trolley.",
+     "The unnamed woman, from the Sunshine Coast, found an empty trolley in an underground car park at the supermarket giant Coles in Caboolture, north of Brisbane on Wednesday.",
+     "She pushed the trolley up the escalator to do her shopping before realising the slithering brown tree snake had curled itself in the corner and was hitching a ride to the store."
+    ],
+    "indices": [
+     0,
+     1,
+     2
+    ],
+    "latency": 4.500000159168849e-06,
+    "metrics": {
+     "words": 87,
+     "compression": 8.620689655172415,
+     "novel_1": 0.0,
+     "novel_2": 0.0,
+     "novel_3": 0.0,
+     "repeated_2": 1.1904761904761905,
+     "repeated_3": 0.0,
+     "latency": 4.500000159168849e-06
+    },
+    "rouge": {
+     "rouge1": 31.08108108108108,
+     "rouge2": 9.589041095890412,
+     "rougeL": 31.08108108108108
+    }
+   },
+   "extractive": {
+    "summary": "The unnamed woman, from the Sunshine Coast, found an empty trolley in an underground car park at the supermarket giant Coles in Caboolture, north of Brisbane on Wednesday. Sunshine Coast Snake Catchers 24/7 Richie Gilbert was called to remove the snake and release it back into the bushland just kilometres away. Snake catcher Richie Gilbert came to the rescue and safely removed the sleepy little snake outside the store .",
+    "summary_sents": [
+     "The unnamed woman, from the Sunshine Coast, found an empty trolley in an underground car park at the supermarket giant Coles in Caboolture, north of Brisbane on Wednesday.",
+     "Sunshine Coast Snake Catchers 24/7 Richie Gilbert was called to remove the snake and release it back into the bushland just kilometres away.",
+     "Snake catcher Richie Gilbert came to the rescue and safely removed the sleepy little snake outside the store ."
+    ],
+    "indices": [
+     1,
+     3,
+     5
+    ],
+    "blocked": [],
+    "scores": [
+     0.14204031229019165,
+     0.34694522619247437,
+     0.20363715291023254,
+     0.36197590827941895,
+     0.17400024831295013,
+     0.31714436411857605,
+     0.09412352740764618,
+     0.03635335713624954,
+     0.01622026413679123,
+     0.0952051654458046,
+     0.01941073313355446,
+     0.04937294125556946,
+     0.02896338514983654,
+     0.07386229187250137,
+     0.10326142609119415,
+     0.028940601274371147,
+     0.02019694074988365,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null
+    ],
+    "method": "BertSumExt-style (frozen BERT + 2-layer Transformer head)",
+    "trained": true,
+    "latency": 0.02614400000038586,
+    "metrics": {
+     "words": 70,
+     "compression": 10.714285714285714,
+     "novel_1": 0.0,
+     "novel_2": 0.0,
+     "novel_3": 0.0,
+     "repeated_2": 2.985074626865672,
+     "repeated_3": 0.0,
+     "latency": 0.02614400000038586
+    },
+    "rouge": {
+     "rouge1": 47.32824427480916,
+     "rouge2": 27.906976744186046,
+     "rougeL": 47.32824427480916
+    }
+   },
+   "abstractive": {
+    "BART-large-CNN": {
+     "chunked": false,
+     "n_chunks": 1,
+     "chunk_summaries": [],
+     "n_input_tokens": 877,
+     "model": "facebook/bart-large-cnn",
+     "summary": "The unnamed woman found an empty trolley in an underground car park at the supermarket giant Coles in Caboolture, north of Brisbane. She pushed the trolley up the escalator to do her shopping before realising the slithering brown tree snake had curled itself in the corner. Sunshine Coast Snake Catchers 24/7 Richie Gilbert was called to remove the snake and release it back into the bushland.",
+     "latency": 1.6544463999998698,
+     "metrics": {
+      "words": 67,
+      "compression": 11.194029850746269,
+      "novel_1": 0.0,
+      "novel_2": 0.0,
+      "novel_3": 3.278688524590164,
+      "repeated_2": 0.0,
+      "repeated_3": 0.0,
+      "latency": 1.6544463999998698
+     },
+     "rouge": {
+      "rouge1": 45.31249999999999,
+      "rouge2": 20.634920634920633,
+      "rougeL": 40.62499999999999
+     },
+     "factcheck": {
+      "flags": [],
+      "backend": "spaCy"
+     }
+    },
+    "DistilBART-CNN (fast)": {
+     "chunked": false,
+     "n_chunks": 1,
+     "chunk_summaries": [],
+     "n_input_tokens": 877,
+     "model": "sshleifer/distilbart-cnn-12-6",
+     "summary": "The unnamed woman found an empty trolley in an underground car park at Coles in Caboolture, north of Brisbane . She pushed the trolley up the escalator to do her shopping before realising the snake had curled itself in the corner and was hitching a ride to the store . Snake catcher Richie Gilbert was called to remove the snake and release it back into the bushland just kilometres away .",
+     "latency": 1.2444619999996576,
+     "metrics": {
+      "words": 68,
+      "compression": 11.029411764705882,
+      "novel_1": 0.0,
+      "novel_2": 1.5384615384615385,
+      "novel_3": 9.67741935483871,
+      "repeated_2": 1.5384615384615385,
+      "repeated_3": 0.0,
+      "latency": 1.2444619999996576
+     },
+     "rouge": {
+      "rouge1": 51.162790697674424,
+      "rouge2": 28.346456692913392,
+      "rougeL": 48.06201550387597
+     },
+     "factcheck": {
+      "flags": [],
+      "backend": "spaCy"
+     }
+    }
+   },
+   "id": "7ffa7562db152aed68cefafe1569f11048586de5",
+   "title": "A young woman who thought she was doing her grocery alone made a surprising...",
+   "n_bart_tokens": 877,
+   "n_flags": {
+    "BART-large-CNN": 0,
+    "DistilBART-CNN (fast)": 0
+   }
+  },
+  {
+   "article": "(CNN)Even in the horror of Syria's civil war, there are few places that showcase the scale of the destruction -- and the senselessness of the loss of life -- more than the Yarmouk camp on the outskirts of Damascus. Set up as a refugee camp for Palestinians in the 1950s, it slowly evolved into a neighborhood over the years, but since 2012 it has been engulfed in the Syrian conflict. Two weeks ago ISIS fighters stormed Yarmouk, and that made life for those still inside even worse than it was before. The Syrian government responded by unleashing a bombing and shelling campaign on the area, residents told CNN, including barrel bombs that flattened many of the buildings already scarred by the three-year-long conflict. Death comes day and night. \"I looked up and saw dust,\" one resident said. \"I opened the door and started walking outside and started shouting to the neighbors. One told me 'I am wounded,' another one didn't answer me at all. That second one -- may god have mercy on his soul -- he was martyred.\" While the battle for Yarmouk is very typical of Syria's civil war, the conflict here is unique. Most of those fighting on all sides are Palestinians. Pro-government factions besiege the area from the outside, cutting off supplies and aid most of the time. The inside is held by anti-regime groups, some of which are Islamists. The situation in Yarmouk was thrust in to the headlines on April 1 when ISIS fighters stormed the rebel-held area and unleashed a campaign of violence and killings. Since then, a local activist tells CNN, ISIS has withdrawn to another area and left the al Qaedalinked group Jabhat al-Nusra in charge of the district. 'The deepest circle of hell': Terrified Yarmouk residents describe ISIS raid . But this is only the most recent in a deadly urban war that is slowly grinding down Yarmouk's buildings and people. Of the more than 100,000 that used to live there, only about 18,000 remain, according to UNRWA, the U.N. agency tasked with aiding Palestinians. I have been to Yarmouk on various occasions, and the picture has always been the same. Pro-government factions surrounded the area and there was house-to house combat, mostly at night. A lot of destruction, very little territorial gain for either side, all of it taking a horrifying toll on the civilians trapped in the middle. \"We have no food or water,\" one resident said, standing amid the ruins of Yarmouk's houses. \"They should open a route so we can eat and drink and they can deliver assistance and food. We have nothing. What can we do?\" But international aid groups can do very little. There are few occasions where aid is allowed into Yarmouk, or where civilians are allowed out. UNRWA can only care for those who do manage to escape. U.N. official to visit besieged refugee camp . The agency, along with the Syrian Arab Red Crescent, runs several shelters for displaced people in government-controlled areas near the camp. Pierre Krahenbuhl, the Commissioner General for UNRWA, recently visited some of them and acknowledged that far too little help was reaching those who need it most. \"We have to call on the world and call on all the actors in the world who can influence the situation to mobilize,\" Krahenbuhl said. \"But much more has to be done to respect the civilians and to make sure that they are safe inside the camp.\" But of course those still inside are by no means safe -- subjected to shelling, bombing and street combat on top of being thirsty, hungry and in need of medication. But one thing that has not been broken is the residents' self-respect and pride. \"This is Yarmouk camp and we are not leaving our homes,\" one man said. \"Whatever happens, if they keep hitting us with barrel bombs we will die.\" An elderly woman recalled her life as a Palestinian refugee. \"I fled Palestine when I was seven years old,\" she said. \"But I will not leave the Yarmouk camp even if I am 75 or 76 years old. Yarmouk camp is equal to my soul. I built it with my bare hands. I carried its stones on my head from a village and laid the foundation to my home. Block by block I carried them on my head.\" But despite their defiance, there's seemingly nothing that can be done to prevent Yarmouk from being reduced to rubble. This is a war of attrition, two sides fighting for inches in tough combat without seeing that they are wrecking the prize they claim to be fighting for. Desperation for Palestinians trapped in Syrian refugee camp .",
+   "reference": "ISIS raided Yarmouk refugee camp near Damascus on April 1 .\n18,000 Palestinian refugees remain in the camp, cut off from vital aid .\nOne defiant elderly resident told CNN: \"I will not leave the Yarmouk camp even if I am 75 or 76 years old\"",
+   "n_article_words": 796,
+   "sentences": [
+    "(CNN)Even in the horror of Syria's civil war, there are few places that showcase the scale of the destruction -- and the senselessness of the loss of life -- more than the Yarmouk camp on the outskirts of Damascus.",
+    "Set up as a refugee camp for Palestinians in the 1950s, it slowly evolved into a neighborhood over the years, but since 2012 it has been engulfed in the Syrian conflict.",
+    "Two weeks ago ISIS fighters stormed Yarmouk, and that made life for those still inside even worse than it was before.",
+    "The Syrian government responded by unleashing a bombing and shelling campaign on the area, residents told CNN, including barrel bombs that flattened many of the buildings already scarred by the three-year-long conflict.",
+    "Death comes day and night.",
+    "\"I looked up and saw dust,\" one resident said.",
+    "\"I opened the door and started walking outside and started shouting to the neighbors.",
+    "One told me 'I am wounded,' another one didn't answer me at all.",
+    "That second one -- may god have mercy on his soul -- he was martyred.\"",
+    "While the battle for Yarmouk is very typical of Syria's civil war, the conflict here is unique.",
+    "Most of those fighting on all sides are Palestinians.",
+    "Pro-government factions besiege the area from the outside, cutting off supplies and aid most of the time.",
+    "The inside is held by anti-regime groups, some of which are Islamists.",
+    "The situation in Yarmouk was thrust in to the headlines on April 1 when ISIS fighters stormed the rebel-held area and unleashed a campaign of violence and killings.",
+    "Since then, a local activist tells CNN, ISIS has withdrawn to another area and left the al Qaedalinked group Jabhat al-Nusra in charge of the district.",
+    "'The deepest circle of hell': Terrified Yarmouk residents describe ISIS raid .",
+    "But this is only the most recent in a deadly urban war that is slowly grinding down Yarmouk's buildings and people.",
+    "Of the more than 100,000 that used to live there, only about 18,000 remain, according to UNRWA, the U.N. agency tasked with aiding Palestinians.",
+    "I have been to Yarmouk on various occasions, and the picture has always been the same.",
+    "Pro-government factions surrounded the area and there was house-to house combat, mostly at night.",
+    "A lot of destruction, very little territorial gain for either side, all of it taking a horrifying toll on the civilians trapped in the middle.",
+    "\"We have no food or water,\" one resident said, standing amid the ruins of Yarmouk's houses.",
+    "\"They should open a route so we can eat and drink and they can deliver assistance and food.",
+    "We have nothing.",
+    "What can we do?\"",
+    "But international aid groups can do very little.",
+    "There are few occasions where aid is allowed into Yarmouk, or where civilians are allowed out.",
+    "UNRWA can only care for those who do manage to escape.",
+    "U.N. official to visit besieged refugee camp .",
+    "The agency, along with the Syrian Arab Red Crescent, runs several shelters for displaced people in government-controlled areas near the camp.",
+    "Pierre Krahenbuhl, the Commissioner General for UNRWA, recently visited some of them and acknowledged that far too little help was reaching those who need it most.",
+    "\"We have to call on the world and call on all the actors in the world who can influence the situation to mobilize,\" Krahenbuhl said.",
+    "\"But much more has to be done to respect the civilians and to make sure that they are safe inside the camp.\"",
+    "But of course those still inside are by no means safe -- subjected to shelling, bombing and street combat on top of being thirsty, hungry and in need of medication.",
+    "But one thing that has not been broken is the residents' self-respect and pride.",
+    "\"This is Yarmouk camp and we are not leaving our homes,\" one man said.",
+    "\"Whatever happens, if they keep hitting us with barrel bombs we will die.\"",
+    "An elderly woman recalled her life as a Palestinian refugee.",
+    "\"I fled Palestine when I was seven years old,\" she said.",
+    "\"But I will not leave the Yarmouk camp even if I am 75 or 76 years old.",
+    "Yarmouk camp is equal to my soul.",
+    "I built it with my bare hands.",
+    "I carried its stones on my head from a village and laid the foundation to my home.",
+    "Block by block I carried them on my head.\"",
+    "But despite their defiance, there's seemingly nothing that can be done to prevent Yarmouk from being reduced to rubble.",
+    "This is a war of attrition, two sides fighting for inches in tough combat without seeing that they are wrecking the prize they claim to be fighting for.",
+    "Desperation for Palestinians trapped in Syrian refugee camp ."
+   ],
+   "lead3": {
+    "summary": "(CNN)Even in the horror of Syria's civil war, there are few places that showcase the scale of the destruction -- and the senselessness of the loss of life -- more than the Yarmouk camp on the outskirts of Damascus. Set up as a refugee camp for Palestinians in the 1950s, it slowly evolved into a neighborhood over the years, but since 2012 it has been engulfed in the Syrian conflict. Two weeks ago ISIS fighters stormed Yarmouk, and that made life for those still inside even worse than it was before.",
+    "summary_sents": [
+     "(CNN)Even in the horror of Syria's civil war, there are few places that showcase the scale of the destruction -- and the senselessness of the loss of life -- more than the Yarmouk camp on the outskirts of Damascus.",
+     "Set up as a refugee camp for Palestinians in the 1950s, it slowly evolved into a neighborhood over the years, but since 2012 it has been engulfed in the Syrian conflict.",
+     "Two weeks ago ISIS fighters stormed Yarmouk, and that made life for those still inside even worse than it was before."
+    ],
+    "indices": [
+     0,
+     1,
+     2
+    ],
+    "latency": 8.800000159681076e-06,
+    "metrics": {
+     "words": 91,
+     "compression": 8.747252747252746,
+     "novel_1": 0.0,
+     "novel_2": 0.0,
+     "novel_3": 0.0,
+     "repeated_2": 3.409090909090909,
+     "repeated_3": 0.0,
+     "latency": 8.800000159681076e-06
+    },
+    "rouge": {
+     "rouge1": 22.058823529411764,
+     "rouge2": 5.970149253731343,
+     "rougeL": 20.58823529411765
+    }
+   },
+   "extractive": {
+    "summary": "Set up as a refugee camp for Palestinians in the 1950s, it slowly evolved into a neighborhood over the years, but since 2012 it has been engulfed in the Syrian conflict. Two weeks ago ISIS fighters stormed Yarmouk, and that made life for those still inside even worse than it was before. The Syrian government responded by unleashing a bombing and shelling campaign on the area, residents told CNN, including barrel bombs that flattened many of the buildings already scarred by the three-year-long conflict.",
+    "summary_sents": [
+     "Set up as a refugee camp for Palestinians in the 1950s, it slowly evolved into a neighborhood over the years, but since 2012 it has been engulfed in the Syrian conflict.",
+     "Two weeks ago ISIS fighters stormed Yarmouk, and that made life for those still inside even worse than it was before.",
+     "The Syrian government responded by unleashing a bombing and shelling campaign on the area, residents told CNN, including barrel bombs that flattened many of the buildings already scarred by the three-year-long conflict."
+    ],
+    "indices": [
+     1,
+     2,
+     3
+    ],
+    "blocked": [],
+    "scores": [
+     0.15122103691101074,
+     0.2377193421125412,
+     0.19759823381900787,
+     0.19325724244117737,
+     0.08324601501226425,
+     0.050218239426612854,
+     0.03279582038521767,
+     0.047426171600818634,
+     0.10032255947589874,
+     0.09210333228111267,
+     0.0774369165301323,
+     0.07537542283535004,
+     0.08591913431882858,
+     0.13551273941993713,
+     0.08137670159339905,
+     0.056533001363277435,
+     0.05364181473851204,
+     0.12001647055149078,
+     0.03357752785086632,
+     0.1513955295085907,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null
+    ],
+    "method": "BertSumExt-style (frozen BERT + 2-layer Transformer head)",
+    "trained": true,
+    "latency": 0.02931880000005549,
+    "metrics": {
+     "words": 86,
+     "compression": 9.255813953488373,
+     "novel_1": 0.0,
+     "novel_2": 0.0,
+     "novel_3": 0.0,
+     "repeated_2": 2.4096385542168677,
+     "repeated_3": 0.0,
+     "latency": 0.02931880000005549
+    },
+    "rouge": {
+     "rouge1": 21.374045801526716,
+     "rouge2": 6.2015503875969,
+     "rougeL": 21.374045801526716
+    }
+   },
+   "abstractive": {
+    "BART-large-CNN": {
+     "chunked": false,
+     "n_chunks": 1,
+     "chunk_summaries": [],
+     "n_input_tokens": 974,
+     "model": "facebook/bart-large-cnn",
+     "summary": "The Yarmouk camp on the outskirts of Damascus has been engulfed in the Syrian conflict. Pro-government factions besiege the area from the outside, cutting off supplies and aid. The inside is held by anti-regime groups, some of which are Islamists. Of the more than 100,000 that used to live there, only about 18,000 remain.",
+     "latency": 1.7561239999999998,
+     "metrics": {
+      "words": 58,
+      "compression": 13.724137931034482,
+      "novel_1": 0.0,
+      "novel_2": 1.8518518518518519,
+      "novel_3": 4.0,
+      "repeated_2": 0.0,
+      "repeated_3": 0.0,
+      "latency": 1.7561239999999998
+     },
+     "rouge": {
+      "rouge1": 27.184466019417474,
+      "rouge2": 9.900990099009901,
+      "rougeL": 23.300970873786405
+     },
+     "factcheck": {
+      "flags": [],
+      "backend": "spaCy"
+     }
+    },
+    "DistilBART-CNN (fast)": {
+     "chunked": false,
+     "n_chunks": 1,
+     "chunk_summaries": [],
+     "n_input_tokens": 974,
+     "model": "sshleifer/distilbart-cnn-12-6",
+     "summary": "The Yarmouk camp on the outskirts of Damascus has been engulfed in Syria's civil war . Most of those fighting on all sides are Palestinians . Pro-government factions besiege the area from the outside, cutting off supplies and aid most of the time . ISIS fighters stormed the rebel-held area and unleashed a campaign of violence and killings .",
+     "latency": 1.1034268000003067,
+     "metrics": {
+      "words": 58,
+      "compression": 13.724137931034482,
+      "novel_1": 0.0,
+      "novel_2": 3.7037037037037037,
+      "novel_3": 8.0,
+      "repeated_2": 1.8518518518518519,
+      "repeated_3": 0.0,
+      "latency": 1.1034268000003067
+     },
+     "rouge": {
+      "rouge1": 25.24271844660194,
+      "rouge2": 5.9405940594059405,
+      "rougeL": 21.359223300970875
+     },
+     "factcheck": {
+      "flags": [],
+      "backend": "spaCy"
+     }
+    }
+   },
+   "id": "a168d9139450678679e8dd7ddfa9fd5b8f8d1c7b",
+   "title": "(CNN)Even in the horror of Syria's civil war, there are few places that...",
+   "n_bart_tokens": 974,
+   "n_flags": {
+    "BART-large-CNN": 0,
+    "DistilBART-CNN (fast)": 0
+   }
+  },
+  {
+   "article": "Sri Lanka, with its shimmering sandy beaches, enthralling wildlife and relics of ancient civilisations, is high on lists of places to visit in 2015. Gareth Huw Davies enjoys the new stability on the teardrop-shaped island in the Indian Ocean, where the holiday industry is recovering, and expanding with a crop of smart new hotels, after the dual torment of a tsunami and a bitter civil war. The modern Seema Malaka temple, Colombo, Sri Lanka. The temple floats on Colombo's Beira Lake . 1...Pure serendipity . This is the spiritual home of serendipity – lucky discoveries by accident – as Serendib is the island’s ancient name. It happens everywhere. On one of my early starts for an excursion, serendipity was seeing dozens of candles flickering in the dense dark outside a Buddhist temple. Then a schoolgirl in brilliant white uniform striding through the dawn mists along a levee between paddy fields, while an equally white egret paced daintily in the water. Or an old lady, knee-deep in a swamp picking blue water lilies, the national flower. And everywhere, games of impromptu cricket, with a stick for a bat and a plastic drum for a wicket, on bare mud patches, in gardens, on roads. Bath time! A frolicking elephant at the Uda Walawe nature reserve has around 200 of the giant creatures . 2...Jumbo jaunt . The island’s unique subspecies of elephants are a vestige of ancient Sri Lanka. You can’t miss them. My most memorable jumbo encounter was at the Uda Walawe nature reserve. We watched in awe as an extended family ambled across our track. One juvenile pushed over a tree, just for fun, it seemed. Last across was a harassed young mother, sheltering a three-week-old baby. In the right season you might see 200 elephants at the lake in Minneriya National Park. The distinguished star in Yala National Park is the ‘prince of the night’ – the leopard. Picture perfect! A tea Planatation near Hunas Falls near Kandy Sri Lanka . 3...Old England . The nearest thing to cool in Sri Lanka is its green and hilly heart, where tea plantations are a fascinating sight. Kandy, where the British beat the last king of Ceylon in 1815, still feels like a charming, antique outpost of empire. It is dotted with guesthouses that recall Tunbridge Wells. The colonial throwbacks include a bus station clock that chimes like Big Ben. There are red King George V post boxes and immaculate old Morris Minors, Hillman Minxes and Ford Anglias. I stayed at the Queen’s Hotel, all echoing wooden corridors and wide, polished staircases. In the Botanical Gardens, I found the tree that Queen Elizabeth planted. In the serenity of the Temple of the Tooth, what is said to be the Buddha’s tooth is kept safe within the innermost of seven caskets. Sigiriya is an ancient palace located in the central Matale District near the town of Dambulla in the Central Province. The name refers to a site that hosues a massive column of rock nearly 660 ft high . 4...Rock of ages . Sigiriya is a quarter the size of Ayers Rock, topped with the 1,500-year-old fortress of the playboy King Kasyapa. He killed his father and surrounded himself with a crocodile-filled moat to exclude his vengeful brother. I decided against the one-hour, 900ft climb to the top for the ancient frescoes and spicy graffiti. Instead I strolled into the jungle that smothers the massive defensive stones at the rock’s base. Huge, golden-green butterflies fluttered past. A strange symphony of birds burbled out of the trees – Sri Lanka has many wonderful avian species. In a gap in the canopy I caught a flash of orange at the top of the rock. It was a Buddhist monk in his vivid garb. Yet more serendipity. Not the usual black cab: Taxi rank of tuk-tuks line the streets in Negombo in Sri Lanka . 5...TAKE THE TUK-TUK . Most visitors stay on the west and south coasts where, as well as standard tourist hotels, there is a growing choice of chic, small places such as Tri, a ten-suite boutique hotel near the south coast that opens in June. Then you can book trips by coach or car (with your own private driver) to most parts of Sri Lanka. For short distances the ubiquitous motorised tuk-tuks are fun. Don’t even consider hiring a car. Roads are an all-day adrenaline rush. You need an expert at the wheel to dodge the massive Ashok Leyland Tusker lorries painted with idealised landscapes, jam-packed buses and wobbling bikes with impossible loads. Paradise! A golden beach with turquise waters at Unawatuna near Galle on the south coast of Sri Lanka . 6...JUST THE (TRAIN) TICKET . The little station on the Colombo to Galle line close by my hotel felt like a slumbering country halt from 1950s Britain. Behind the ticket office’s narrow arched window, a clerk consulted his tomes and solemnly outlined my choices – I opted for a 90-minute trip in second class for 50p. On the platform I joined goats and men there just for a chat. We lurched off down the tragic (it bore the brunt of the 2004 tsunami) and beautiful coast to Galle. Another epic rail journey is Colombo to Trincomalee, the east coast city closed to the world by civil war until recently and still to be discovered by tourism. It’s just £2 one way. More information at srilanka.travel. Precious peg! The Temple of the Tooth near Kandy, houses a tooth relic of the Buddha .",
+   "reference": "The teardrop-shaped island was ravaged by the tsunami in 2004 .\nThe holiday industry there is recovered and expanding with new hotels .\nSee the Uda Walawe nature reserve elephants and tea plantations in Kandy .",
+   "n_article_words": 939,
+   "sentences": [
+    "Sri Lanka, with its shimmering sandy beaches, enthralling wildlife and relics of ancient civilisations, is high on lists of places to visit in 2015.",
+    "Gareth Huw Davies enjoys the new stability on the teardrop-shaped island in the Indian Ocean, where the holiday industry is recovering, and expanding with a crop of smart new hotels, after the dual torment of a tsunami and a bitter civil war.",
+    "The modern Seema Malaka temple, Colombo, Sri Lanka.",
+    "The temple floats on Colombo's Beira Lake .",
+    "1...Pure serendipity .",
+    "This is the spiritual home of serendipity – lucky discoveries by accident – as Serendib is the island’s ancient name.",
+    "It happens everywhere.",
+    "On one of my early starts for an excursion, serendipity was seeing dozens of candles flickering in the dense dark outside a Buddhist temple.",
+    "Then a schoolgirl in brilliant white uniform striding through the dawn mists along a levee between paddy fields, while an equally white egret paced daintily in the water.",
+    "Or an old lady, knee-deep in a swamp picking blue water lilies, the national flower.",
+    "And everywhere, games of impromptu cricket, with a stick for a bat and a plastic drum for a wicket, on bare mud patches, in gardens, on roads.",
+    "A frolicking elephant at the Uda Walawe nature reserve has around 200 of the giant creatures .",
+    "2...Jumbo jaunt .",
+    "The island’s unique subspecies of elephants are a vestige of ancient Sri Lanka.",
+    "You can’t miss them.",
+    "My most memorable jumbo encounter was at the Uda Walawe nature reserve.",
+    "We watched in awe as an extended family ambled across our track.",
+    "One juvenile pushed over a tree, just for fun, it seemed.",
+    "Last across was a harassed young mother, sheltering a three-week-old baby.",
+    "In the right season you might see 200 elephants at the lake in Minneriya National Park.",
+    "The distinguished star in Yala National Park is the ‘prince of the night’ – the leopard.",
+    "A tea Planatation near Hunas Falls near Kandy Sri Lanka .",
+    "3...Old England .",
+    "The nearest thing to cool in Sri Lanka is its green and hilly heart, where tea plantations are a fascinating sight.",
+    "Kandy, where the British beat the last king of Ceylon in 1815, still feels like a charming, antique outpost of empire.",
+    "It is dotted with guesthouses that recall Tunbridge Wells.",
+    "The colonial throwbacks include a bus station clock that chimes like Big Ben.",
+    "There are red King George V post boxes and immaculate old Morris Minors, Hillman Minxes and Ford Anglias.",
+    "I stayed at the Queen’s Hotel, all echoing wooden corridors and wide, polished staircases.",
+    "In the Botanical Gardens, I found the tree that Queen Elizabeth planted.",
+    "In the serenity of the Temple of the Tooth, what is said to be the Buddha’s tooth is kept safe within the innermost of seven caskets.",
+    "Sigiriya is an ancient palace located in the central Matale District near the town of Dambulla in the Central Province.",
+    "The name refers to a site that hosues a massive column of rock nearly 660 ft high .",
+    "4...Rock of ages .",
+    "Sigiriya is a quarter the size of Ayers Rock, topped with the 1,500-year-old fortress of the playboy King Kasyapa.",
+    "He killed his father and surrounded himself with a crocodile-filled moat to exclude his vengeful brother.",
+    "I decided against the one-hour, 900ft climb to the top for the ancient frescoes and spicy graffiti.",
+    "Instead I strolled into the jungle that smothers the massive defensive stones at the rock’s base.",
+    "Huge, golden-green butterflies fluttered past.",
+    "A strange symphony of birds burbled out of the trees – Sri Lanka has many wonderful avian species.",
+    "In a gap in the canopy I caught a flash of orange at the top of the rock.",
+    "It was a Buddhist monk in his vivid garb.",
+    "Yet more serendipity.",
+    "Not the usual black cab: Taxi rank of tuk-tuks line the streets in Negombo in Sri Lanka .",
+    "5...TAKE THE TUK-TUK .",
+    "Most visitors stay on the west and south coasts where, as well as standard tourist hotels, there is a growing choice of chic, small places such as Tri, a ten-suite boutique hotel near the south coast that opens in June.",
+    "Then you can book trips by coach or car (with your own private driver) to most parts of Sri Lanka.",
+    "For short distances the ubiquitous motorised tuk-tuks are fun.",
+    "Don’t even consider hiring a car.",
+    "Roads are an all-day adrenaline rush.",
+    "You need an expert at the wheel to dodge the massive Ashok Leyland Tusker lorries painted with idealised landscapes, jam-packed buses and wobbling bikes with impossible loads.",
+    "A golden beach with turquise waters at Unawatuna near Galle on the south coast of Sri Lanka .",
+    "6...JUST THE (TRAIN) TICKET .",
+    "The little station on the Colombo to Galle line close by my hotel felt like a slumbering country halt from 1950s Britain.",
+    "Behind the ticket office’s narrow arched window, a clerk consulted his tomes and solemnly outlined my choices – I opted for a 90-minute trip in second class for 50p.",
+    "On the platform I joined goats and men there just for a chat.",
+    "We lurched off down the tragic (it bore the brunt of the 2004 tsunami) and beautiful coast to Galle.",
+    "Another epic rail journey is Colombo to Trincomalee, the east coast city closed to the world by civil war until recently and still to be discovered by tourism.",
+    "It’s just £2 one way.",
+    "More information at srilanka.travel.",
+    "The Temple of the Tooth near Kandy, houses a tooth relic of the Buddha ."
+   ],
+   "lead3": {
+    "summary": "Sri Lanka, with its shimmering sandy beaches, enthralling wildlife and relics of ancient civilisations, is high on lists of places to visit in 2015. Gareth Huw Davies enjoys the new stability on the teardrop-shaped island in the Indian Ocean, where the holiday industry is recovering, and expanding with a crop of smart new hotels, after the dual torment of a tsunami and a bitter civil war. The modern Seema Malaka temple, Colombo, Sri Lanka.",
+    "summary_sents": [
+     "Sri Lanka, with its shimmering sandy beaches, enthralling wildlife and relics of ancient civilisations, is high on lists of places to visit in 2015.",
+     "Gareth Huw Davies enjoys the new stability on the teardrop-shaped island in the Indian Ocean, where the holiday industry is recovering, and expanding with a crop of smart new hotels, after the dual torment of a tsunami and a bitter civil war.",
+     "The modern Seema Malaka temple, Colombo, Sri Lanka."
+    ],
+    "indices": [
+     0,
+     1,
+     2
+    ],
+    "latency": 4.399999852466863e-06,
+    "metrics": {
+     "words": 75,
+     "compression": 12.52,
+     "novel_1": 0.0,
+     "novel_2": 0.0,
+     "novel_3": 0.0,
+     "repeated_2": 1.3888888888888888,
+     "repeated_3": 0.0,
+     "latency": 4.399999852466863e-06
+    },
+    "rouge": {
+     "rouge1": 36.69724770642201,
+     "rouge2": 18.691588785046733,
+     "rougeL": 36.69724770642201
+    }
+   },
+   "extractive": {
+    "summary": "Gareth Huw Davies enjoys the new stability on the teardrop-shaped island in the Indian Ocean, where the holiday industry is recovering, and expanding with a crop of smart new hotels, after the dual torment of a tsunami and a bitter civil war. The modern Seema Malaka temple, Colombo, Sri Lanka. The temple floats on Colombo's Beira Lake .",
+    "summary_sents": [
+     "Gareth Huw Davies enjoys the new stability on the teardrop-shaped island in the Indian Ocean, where the holiday industry is recovering, and expanding with a crop of smart new hotels, after the dual torment of a tsunami and a bitter civil war.",
+     "The modern Seema Malaka temple, Colombo, Sri Lanka.",
+     "The temple floats on Colombo's Beira Lake ."
+    ],
+    "indices": [
+     1,
+     2,
+     3
+    ],
+    "blocked": [],
+    "scores": [
+     0.1262091100215912,
+     0.1670766919851303,
+     0.2935788929462433,
+     0.30934980511665344,
+     0.05520826578140259,
+     0.08952966332435608,
+     0.031685858964920044,
+     0.05118541046977043,
+     0.023216433823108673,
+     0.05501053109765053,
+     0.02313852310180664,
+     0.1306500881910324,
+     0.0355757400393486,
+     0.15251865983009338,
+     0.01827387325465679,
+     0.0955255925655365,
+     0.01489601843059063,
+     0.020079230889678,
+     0.021245447918772697,
+     0.05731526389718056,
+     0.055570606142282486,
+     0.04881808161735535,
+     0.022001266479492188,
+     0.048521727323532104,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null
+    ],
+    "method": "BertSumExt-style (frozen BERT + 2-layer Transformer head)",
+    "trained": true,
+    "latency": 0.02661740000030477,
+    "metrics": {
+     "words": 59,
+     "compression": 15.915254237288135,
+     "novel_1": 0.0,
+     "novel_2": 0.0,
+     "novel_3": 0.0,
+     "repeated_2": 0.0,
+     "repeated_3": 0.0,
+     "latency": 0.02661740000030477
+    },
+    "rouge": {
+     "rouge1": 40.86021505376343,
+     "rouge2": 21.978021978021978,
+     "rougeL": 38.70967741935484
+    }
+   },
+   "abstractive": {
+    "BART-large-CNN": {
+     "chunked": true,
+     "n_chunks": 2,
+     "chunk_summaries": [
+      "Gareth Huw Davies enjoys the new stability on the teardrop-shaped island. Sri Lanka is high on lists of places to visit in 2015. The island's unique subspecies of elephants are a vestige of ancient Sri Lanka.",
+      "Most visitors stay on the west and south coasts. There is a growing choice of chic, small places such as Tri, a ten-suite boutique hotel near the south coast that opens in June. For short distances the ubiquitous motorised tuk-tuks are fun."
+     ],
+     "n_input_tokens": 1264,
+     "model": "facebook/bart-large-cnn",
+     "summary": "Sri Lanka is high on lists of places to visit in 2015. The island's unique subspecies of elephants are a vestige of ancient Sri Lanka. Most visitors stay on the west and south coasts. For short distances the ubiquitous motorised tuk-tuks are fun.",
+     "latency": 3.830040000000281,
+     "metrics": {
+      "words": 45,
+      "compression": 20.866666666666667,
+      "novel_1": 0.0,
+      "novel_2": 0.0,
+      "novel_3": 2.7027027027027026,
+      "repeated_2": 2.4390243902439024,
+      "repeated_3": 0.0,
+      "latency": 3.830040000000281
+     },
+     "rouge": {
+      "rouge1": 20.253164556962027,
+      "rouge2": 0.0,
+      "rougeL": 20.253164556962027
+     },
+     "factcheck": {
+      "flags": [],
+      "backend": "spaCy"
+     }
+    },
+    "DistilBART-CNN (fast)": {
+     "chunked": true,
+     "n_chunks": 2,
+     "chunk_summaries": [
+      "Gareth Huw Davies enjoys the new stability on the teardrop-shaped island in the Indian Ocean . Sri Lanka is high on lists of places to visit in 2015 . The island’s unique subspecies of elephants are a vestige of ancient Sri Lanka .",
+      "Most visitors stay on the west and south coasts where as well as standard tourist hotels, there is a growing choice of chic, small places such as Tri, a ten-suite boutique hotel near the south coast that opens in June . For short distances the ubiquitous motorised motorised tuk-tuks are fun ."
+     ],
+     "n_input_tokens": 1264,
+     "model": "sshleifer/distilbart-cnn-12-6",
+     "summary": "Sri Lanka is high on lists of places to visit in 2015 . The island’s unique subspecies of elephants are a vestige of ancient Sri Lanka . Most visitors stay on the west and south coasts where as well as standard tourist hotels, there is a growing choice of chic, small places such as Tri .",
+     "latency": 2.73731829999997,
+     "metrics": {
+      "words": 54,
+      "compression": 17.38888888888889,
+      "novel_1": 0.0,
+      "novel_2": 0.0,
+      "novel_3": 2.0833333333333335,
+      "repeated_2": 1.9607843137254901,
+      "repeated_3": 0.0,
+      "latency": 2.73731829999997
+     },
+     "rouge": {
+      "rouge1": 20.45454545454545,
+      "rouge2": 2.3255813953488373,
+      "rougeL": 18.18181818181818
+     },
+     "factcheck": {
+      "flags": [],
+      "backend": "spaCy"
+     }
+    }
+   },
+   "id": "9a8b0748b5b0f1d5fbf44df9e03fa3730db19264",
+   "title": "Sri Lanka, with its shimmering sandy beaches, enthralling wildlife and...",
+   "n_bart_tokens": 1264,
+   "n_flags": {
+    "BART-large-CNN": 0,
+    "DistilBART-CNN (fast)": 0
+   }
+  },
+  {
+   "article": "Expensive clothes, fast cars and glittering industry parties: to the average person, the lives of the rich and famous may seem way out of reach. But the growing slew of celebrity gaming apps, from the likes of Kim Kardashian and Lindsay Lohan (and soon, Katy Perry), promise to immerse you in it all, temporarily. Femail investigates what it's like to 'live' the life of a celebrity for a day. Scroll down for video . Kim Kardashian: Hollywood is the app from the reality star, which uses her likeness and voice. Users have to build a celebrity empire similar to Kim's . The 34-year-old launched the highly lucrative app last June, and has an estimated 28 million downloads . Kim Kardashian's highly lucrative app, Kim Kardashian: Hollywood, developed by Glu Mobile, has already been downloaded an estimated 28 million times since it was launched last June. The quest-based adventure game requires users to create a character (customising a 'cute' look is compulsory), become friends with Kim Kardashian and then embark on social-climbing, empire-building adventures. The character of Kim, voiced by the reality star herself, is your best friend in the game . YOU'RE NOBODY UNTIL YOU MEET KIM . At the beginning of the game, your character works in retail, takes public transport everywhere, her apartment is essentially bare and can't even afford to adopt stray cats. That is, until you meet Kim Kardashian by chance (voiced by the reality star herself), and she slowly introduces you into the industry. The game puts an emphasis in being charming and friendly to almost everyone, and also taking every opportunity . TAKE EVERY OPPORTUNITY . At the beginning, your boss trusts you to lock up the clothes shop, and Kim Kardashian turns up begging you to help her. You are given no choice but to break into the shop, choose her an outfit and give it to her for free. Luckily she rewards you by inviting you to a impromptu photo shoot. This type of sporadic activity is rife throughout the game and actively encouraged. MONEY AND CHARM IS KEY . Obediently completing mini-quests will win you cash and K-stars (which you can collect by paying real money), but as is expected, to actually complete many of the tasks and buy new clothes, money is also required. Kustomise yourself: It's necessary to constantly change your outfit and appearance in order to fit in at all the industry events . IMAGE IS EVERYTHING . Within ten minutes of living Kim Kardashian's life, users have changed their outfits three times and checked their reflections twice. Seemingly, no one makes it big in Hollywood without constantly considering how their image can be improved. Vogue's Andre Leon Talley (pictured left) makes an appearance in the game. No doubt as a career booster . PEOPLE FIT INTO 3 CATEGORIES . Strangely, it seems Kim is your only friend in the game, and you'd be wrong if you think you're allowed to make new ones. Characters fit into solely three categories: potential love-interests, career-boosters, or an arch-nemesis. Your very own 'momager': Early on in the game, Kim sites that a necessity of making it in the game involves having your own 'momager' (mother/manager), just like real-life parent Kris Jenner (pictured right - in the game) (Pictured left to right) the cartoon recreations of Kourtney, Khloé, Kim and Kris Kardashian. They are characters you eventually meet later in the game . YOU'LL NEED A 'MOMAGER' One of the first things Kim Kardashian mentions to you is that you need a 'momager'. Kris Jenner, Kim Kardashian's very own, makes an appearance later in the game. You eventually also meet Kim Kardashian's real life family, who have all lent their likeness and voice to the app. This includes Kris, Kourtney, Khloé, Kendall and Kylie (but no Rob). Opportunities for fame come in all shapes of sizes, including dating (and marrying) people for exposure . YOU HAVE TO DO THINGS YOU DON'T WANT TO . Although the game allows you to fly to Milan with Kendall, and hang out with Vogue's Andre Talley Leon eventually, you have to do many things that aren't entirely favourable. This includes: dating (and marrying) people you don't want to for exposure, 'charming' people with K-Stars (which is a currency in the game) and partaking in sketchy photo shoots. Fame Game: Lindsay Lohan also launched her own game, The Price of Fame . Uncanny: Lohan's game is a lot sillier and almost works to poke fun at celebrity culture . Lindsay Lohan's game is comparatively sillier, and works more as a tongue-in-cheek critique of celebrity culture. If living a day in the life of Lindsay Lohan can be derived purely from playing her game, it's a lot sillier and crass than Kim Kardashian's. Although in both games you're similarly working towards meteoric fame, in Lindsay Lohan's you play for fans. You begin the game with no identity and no fans. Fans are earned by spending coins on items that will boost your star status. Players must try and collect as many fans as possible, by engaging in ridiculous or unfavourable activities . All the fans: Success in Lindsay's game is judged by how many fans you can generate and also how quickly you can . ANKLE BRACELETS WILL WIN YOU FANS . Oddly enough, ankle bracelets are one of the purchases that can be used to win fans at a faster rate. Here's where the silly element of Lindsay Lohan's app really rears its head. Lindsay Lohan's game offers less trend-led outfits as Kim Kardashian's and seems to criticise the vacuity of showbiz . LOOKS AREN'T EVERYTHING . Unlike Kim Kardashian's app, Lindsay Lohan's game instantly tells you at the beginning, while you're choosing your outfit: 'Don’t worry, nothing is permanent in show business.' Your character starts off completely naked, with just stars covering her private areas. The game almost seems to critique the humiliating, vacuous process of turning into a Hollywood star. Rather than placing an emphasis on outfits and make-up, it's more about the ridiculous things you can choose to do. To generate fans quicker, you can choose to invest in publicity stunts, which include releasing nude selfies, having an elevator fights and even faking your death . SKETCHY ACTIVITIES ARE THE NORM . Publicity investments can bring you an endless barrage of fame and increase your notoriety. Options include: leaking a nude selfie, releasing a ghostwritten rap album, having an elevator fight, buying bum implants (one cheek at a time no less), faking your death, and sleeping with a poet laureate. Other investments also include phony rap beefs and nip slips. Among the ridiculous activities that can bring you press and publicity, you can also choose to engage in embarrassing photo shoots (pictured) IT'S THE LITTLE THINGS THAT COUNT . Again, the idea of using money to directly buy your fame and influence is a key idea. Coconut water and paparazzi repellent are amongst the ridiculous things you can purchase that will earn you fans. KATY PERRY: Unnamed app . To be released at the end of 2015, the pop star has teamed up with none other than the app developers of Kim Kardashian's lucrative app: Glu Mobile. The app is likely to work on the same premise as Kim's, whereby users attempt to become Hollywood celebrities. But specifics have not yet been announced. TOM HANKS: Hanx Writer, Free . Inspired by the actor's real-life fascination with type-writers, the app recreates the nostalgic experience of an actual type-writer (noise and imagery included), but with the easy functionality of an iPad. In September of last year, the app topped the iTunes charts. DAVID HASSELHOFF: Ask The Hoff, Free . In the style of a Magic 8 Ball, the actor's app allows befuddled users to ask him for advice. It generates hilarious Hoff-appropriate answers that will see you through any problem. SAMUEL L JACKSON: iSamJackson, £0.79 . The first thing to consider before downloading the actor's app, is the warning: 'Explicit'. It works as a soundboard, whereby the user can select famous lines and Jackson will deliver them with recordings of his world-famous sass(and profanity). MARIAH CAREY: Mariah Carey-oke, £2.99 . Exactly what is says on the tin, users can test their knowledge of the diva's lyrics and vocal abilities. It uses voice recognition software to tell how well you can hit Carey's high notes. SNOOP DOGG: Snoopify, Free . Wildly popular, the app transforms users into virtual 'gangsters' with the help of digital stickers. There are sunglasses, wads of cash, gold 'bling' and neon wristwatches.",
+   "reference": "Kim Kardashian: Hollywood and Lindsay Lohan's The Price of Fame apps .\nUsers create an aspiring celebrity and rise to fame in the games .\nEveryone is either a potential love-interest, career-booster, or enemy .",
+   "n_article_words": 1465,
+   "sentences": [
+    "Expensive clothes, fast cars and glittering industry parties: to the average person, the lives of the rich and famous may seem way out of reach.",
+    "But the growing slew of celebrity gaming apps, from the likes of Kim Kardashian and Lindsay Lohan (and soon, Katy Perry), promise to immerse you in it all, temporarily.",
+    "Femail investigates what it's like to 'live' the life of a celebrity for a day.",
+    "Scroll down for video .",
+    "Kim Kardashian: Hollywood is the app from the reality star, which uses her likeness and voice.",
+    "Users have to build a celebrity empire similar to Kim's .",
+    "The 34-year-old launched the highly lucrative app last June, and has an estimated 28 million downloads .",
+    "Kim Kardashian's highly lucrative app, Kim Kardashian: Hollywood, developed by Glu Mobile, has already been downloaded an estimated 28 million times since it was launched last June.",
+    "The quest-based adventure game requires users to create a character (customising a 'cute' look is compulsory), become friends with Kim Kardashian and then embark on social-climbing, empire-building adventures.",
+    "The character of Kim, voiced by the reality star herself, is your best friend in the game .",
+    "YOU'RE NOBODY UNTIL YOU MEET KIM .",
+    "At the beginning of the game, your character works in retail, takes public transport everywhere, her apartment is essentially bare and can't even afford to adopt stray cats.",
+    "That is, until you meet Kim Kardashian by chance (voiced by the reality star herself), and she slowly introduces you into the industry.",
+    "The game puts an emphasis in being charming and friendly to almost everyone, and also taking every opportunity .",
+    "TAKE EVERY OPPORTUNITY .",
+    "At the beginning, your boss trusts you to lock up the clothes shop, and Kim Kardashian turns up begging you to help her.",
+    "You are given no choice but to break into the shop, choose her an outfit and give it to her for free.",
+    "Luckily she rewards you by inviting you to a impromptu photo shoot.",
+    "This type of sporadic activity is rife throughout the game and actively encouraged.",
+    "MONEY AND CHARM IS KEY .",
+    "Obediently completing mini-quests will win you cash and K-stars (which you can collect by paying real money), but as is expected, to actually complete many of the tasks and buy new clothes, money is also required.",
+    "Kustomise yourself: It's necessary to constantly change your outfit and appearance in order to fit in at all the industry events .",
+    "IMAGE IS EVERYTHING .",
+    "Within ten minutes of living Kim Kardashian's life, users have changed their outfits three times and checked their reflections twice.",
+    "Seemingly, no one makes it big in Hollywood without constantly considering how their image can be improved.",
+    "Vogue's Andre Leon Talley (pictured left) makes an appearance in the game.",
+    "No doubt as a career booster .",
+    "PEOPLE FIT INTO 3 CATEGORIES .",
+    "Strangely, it seems Kim is your only friend in the game, and you'd be wrong if you think you're allowed to make new ones.",
+    "Characters fit into solely three categories: potential love-interests, career-boosters, or an arch-nemesis.",
+    "Your very own 'momager': Early on in the game, Kim sites that a necessity of making it in the game involves having your own 'momager' (mother/manager), just like real-life parent Kris Jenner (pictured right - in the game) (Pictured left to right) the cartoon recreations of Kourtney, Khloé, Kim and Kris Kardashian.",
+    "They are characters you eventually meet later in the game .",
+    "YOU'LL NEED A 'MOMAGER' One of the first things Kim Kardashian mentions to you is that you need a 'momager'.",
+    "Kris Jenner, Kim Kardashian's very own, makes an appearance later in the game.",
+    "You eventually also meet Kim Kardashian's real life family, who have all lent their likeness and voice to the app.",
+    "This includes Kris, Kourtney, Khloé, Kendall and Kylie (but no Rob).",
+    "Opportunities for fame come in all shapes of sizes, including dating (and marrying) people for exposure .",
+    "YOU HAVE TO DO THINGS YOU DON'T WANT TO .",
+    "Although the game allows you to fly to Milan with Kendall, and hang out with Vogue's Andre Talley Leon eventually, you have to do many things that aren't entirely favourable.",
+    "This includes: dating (and marrying) people you don't want to for exposure, 'charming' people with K-Stars (which is a currency in the game) and partaking in sketchy photo shoots.",
+    "Fame Game: Lindsay Lohan also launched her own game, The Price of Fame .",
+    "Uncanny: Lohan's game is a lot sillier and almost works to poke fun at celebrity culture .",
+    "Lindsay Lohan's game is comparatively sillier, and works more as a tongue-in-cheek critique of celebrity culture.",
+    "If living a day in the life of Lindsay Lohan can be derived purely from playing her game, it's a lot sillier and crass than Kim Kardashian's.",
+    "Although in both games you're similarly working towards meteoric fame, in Lindsay Lohan's you play for fans.",
+    "You begin the game with no identity and no fans.",
+    "Fans are earned by spending coins on items that will boost your star status.",
+    "Players must try and collect as many fans as possible, by engaging in ridiculous or unfavourable activities .",
+    "All the fans: Success in Lindsay's game is judged by how many fans you can generate and also how quickly you can .",
+    "ANKLE BRACELETS WILL WIN YOU FANS .",
+    "Oddly enough, ankle bracelets are one of the purchases that can be used to win fans at a faster rate.",
+    "Here's where the silly element of Lindsay Lohan's app really rears its head.",
+    "Lindsay Lohan's game offers less trend-led outfits as Kim Kardashian's and seems to criticise the vacuity of showbiz .",
+    "LOOKS AREN'T EVERYTHING .",
+    "Unlike Kim Kardashian's app, Lindsay Lohan's game instantly tells you at the beginning, while you're choosing your outfit: 'Don’t worry, nothing is permanent in show business.'",
+    "Your character starts off completely naked, with just stars covering her private areas.",
+    "The game almost seems to critique the humiliating, vacuous process of turning into a Hollywood star.",
+    "Rather than placing an emphasis on outfits and make-up, it's more about the ridiculous things you can choose to do.",
+    "To generate fans quicker, you can choose to invest in publicity stunts, which include releasing nude selfies, having an elevator fights and even faking your death .",
+    "SKETCHY ACTIVITIES ARE THE NORM .",
+    "Publicity investments can bring you an endless barrage of fame and increase your notoriety.",
+    "Options include: leaking a nude selfie, releasing a ghostwritten rap album, having an elevator fight, buying bum implants (one cheek at a time no less), faking your death, and sleeping with a poet laureate.",
+    "Other investments also include phony rap beefs and nip slips.",
+    "Among the ridiculous activities that can bring you press and publicity, you can also choose to engage in embarrassing photo shoots (pictured) IT'S THE LITTLE THINGS THAT COUNT .",
+    "Again, the idea of using money to directly buy your fame and influence is a key idea.",
+    "Coconut water and paparazzi repellent are amongst the ridiculous things you can purchase that will earn you fans.",
+    "KATY PERRY: Unnamed app .",
+    "To be released at the end of 2015, the pop star has teamed up with none other than the app developers of Kim Kardashian's lucrative app: Glu Mobile.",
+    "The app is likely to work on the same premise as Kim's, whereby users attempt to become Hollywood celebrities.",
+    "But specifics have not yet been announced.",
+    "TOM HANKS: Hanx Writer, Free .",
+    "Inspired by the actor's real-life fascination with type-writers, the app recreates the nostalgic experience of an actual type-writer (noise and imagery included), but with the easy functionality of an iPad.",
+    "In September of last year, the app topped the iTunes charts.",
+    "DAVID HASSELHOFF: Ask The Hoff, Free .",
+    "In the style of a Magic 8 Ball, the actor's app allows befuddled users to ask him for advice.",
+    "It generates hilarious Hoff-appropriate answers that will see you through any problem.",
+    "SAMUEL L JACKSON: iSamJackson, £0.79 .",
+    "The first thing to consider before downloading the actor's app, is the warning: 'Explicit'.",
+    "It works as a soundboard, whereby the user can select famous lines and Jackson will deliver them with recordings of his world-famous sass(and profanity).",
+    "MARIAH CAREY: Mariah Carey-oke, £2.99 .",
+    "Exactly what is says on the tin, users can test their knowledge of the diva's lyrics and vocal abilities.",
+    "It uses voice recognition software to tell how well you can hit Carey's high notes.",
+    "SNOOP DOGG: Snoopify, Free .",
+    "Wildly popular, the app transforms users into virtual 'gangsters' with the help of digital stickers.",
+    "There are sunglasses, wads of cash, gold 'bling' and neon wristwatches."
+   ],
+   "lead3": {
+    "summary": "Expensive clothes, fast cars and glittering industry parties: to the average person, the lives of the rich and famous may seem way out of reach. But the growing slew of celebrity gaming apps, from the likes of Kim Kardashian and Lindsay Lohan (and soon, Katy Perry), promise to immerse you in it all, temporarily. Femail investigates what it's like to 'live' the life of a celebrity for a day.",
+    "summary_sents": [
+     "Expensive clothes, fast cars and glittering industry parties: to the average person, the lives of the rich and famous may seem way out of reach.",
+     "But the growing slew of celebrity gaming apps, from the likes of Kim Kardashian and Lindsay Lohan (and soon, Katy Perry), promise to immerse you in it all, temporarily.",
+     "Femail investigates what it's like to 'live' the life of a celebrity for a day."
+    ],
+    "indices": [
+     0,
+     1,
+     2
+    ],
+    "latency": 3.999999989900971e-06,
+    "metrics": {
+     "words": 70,
+     "compression": 20.928571428571427,
+     "novel_1": 0.0,
+     "novel_2": 0.0,
+     "novel_3": 0.0,
+     "repeated_2": 0.0,
+     "repeated_3": 0.0,
+     "latency": 3.999999989900971e-06
+    },
+    "rouge": {
+     "rouge1": 30.476190476190474,
+     "rouge2": 5.825242718446603,
+     "rougeL": 26.666666666666668
+    }
+   },
+   "extractive": {
+    "summary": "But the growing slew of celebrity gaming apps, from the likes of Kim Kardashian and Lindsay Lohan (and soon, Katy Perry), promise to immerse you in it all, temporarily. Users have to build a celebrity empire similar to Kim's . Kim Kardashian's highly lucrative app, Kim Kardashian: Hollywood, developed by Glu Mobile, has already been downloaded an estimated 28 million times since it was launched last June.",
+    "summary_sents": [
+     "But the growing slew of celebrity gaming apps, from the likes of Kim Kardashian and Lindsay Lohan (and soon, Katy Perry), promise to immerse you in it all, temporarily.",
+     "Users have to build a celebrity empire similar to Kim's .",
+     "Kim Kardashian's highly lucrative app, Kim Kardashian: Hollywood, developed by Glu Mobile, has already been downloaded an estimated 28 million times since it was launched last June."
+    ],
+    "indices": [
+     1,
+     5,
+     7
+    ],
+    "blocked": [
+     4,
+     6
+    ],
+    "scores": [
+     0.03521208465099335,
+     0.22390447556972504,
+     0.08483447879552841,
+     0.012414942495524883,
+     0.3086297810077667,
+     0.15522915124893188,
+     0.2901606261730194,
+     0.34979870915412903,
+     0.04580650478601456,
+     0.11195167899131775,
+     0.014306215569376945,
+     0.024703020229935646,
+     0.06627576798200607,
+     0.019993111491203308,
+     0.013158586807549,
+     0.020295515656471252,
+     0.014554341323673725,
+     0.01264949794858694,
+     0.017093800008296967,
+     0.0183901134878397,
+     0.01539470162242651,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null
+    ],
+    "method": "BertSumExt-style (frozen BERT + 2-layer Transformer head)",
+    "trained": true,
+    "latency": 0.02645440000014787,
+    "metrics": {
+     "words": 68,
+     "compression": 21.544117647058822,
+     "novel_1": 0.0,
+     "novel_2": 0.0,
+     "novel_3": 0.0,
+     "repeated_2": 3.076923076923077,
+     "repeated_3": 0.0,
+     "latency": 0.02645440000014787
+    },
+    "rouge": {
+     "rouge1": 36.89320388349515,
+     "rouge2": 7.920792079207921,
+     "rougeL": 27.184466019417474
+    }
+   },
+   "abstractive": {
+    "BART-large-CNN": {
+     "chunked": true,
+     "n_chunks": 3,
+     "chunk_summaries": [
+      "Kim Kardashian: Hollywood is the app from the reality star, which uses her likeness and voice. Users have to build a celebrity empire similar to Kim's. The 34-year-old launched the highly lucrative app last June, and has an estimated 28 million downloads.",
+      "Lindsay Lohan's game is a lot sillier and crass than Kim Kardashian's. You begin the game with no identity and no fans. Fans are earned by spending coins on items that will boost your star status. Success is judged by how many fans you can generate and also how quickly.",
+      "iSamJackson: iSamJackson, £0.79 works as a soundboard. Users can select famous lines and Jackson will deliver them with recordings of his world-famous sass(and profanity) Mariah Carey-oke: Mariah-oke, £2.99, uses voice recognition software to tell how well you can hit Carey's high notes."
+     ],
+     "n_input_tokens": 1902,
+     "model": "facebook/bart-large-cnn",
+     "summary": "Kim Kardashian: Hollywood is the app from the reality star, which uses her likeness and voice. Users have to build a celebrity empire similar to Kim's. The 34-year-old launched the highly lucrative app last June, and has an estimated 28 million downloads. Lindsay Lohan's game is a lot sillier and crass than Kim Kardashian's.",
+     "latency": 38.67748960000017,
+     "metrics": {
+      "words": 59,
+      "compression": 24.83050847457627,
+      "novel_1": 0.0,
+      "novel_2": 0.0,
+      "novel_3": 0.0,
+      "repeated_2": 1.8181818181818181,
+      "repeated_3": 0.0,
+      "latency": 38.67748960000017
+     },
+     "rouge": {
+      "rouge1": 38.29787234042553,
+      "rouge2": 10.869565217391305,
+      "rougeL": 27.659574468085108
+     },
+     "factcheck": {
+      "flags": [],
+      "backend": "spaCy"
+     }
+    },
+    "DistilBART-CNN (fast)": {
+     "chunked": true,
+     "n_chunks": 3,
+     "chunk_summaries": [
+      "Kim Kardashian: Hollywood is the app from the reality star, which uses her likeness and voice . Users have to build a celebrity empire similar to Kim's . The 34-year-old launched the highly lucrative app last June, and has an estimated 28 million downloads .",
+      "Lindsay Lohan's game, The Price of Fame, is a lot sillier than Kim Kardashian's . You begin the game with no identity and no fans . You must try and collect as many fans by engaging in ridiculous or unfavourable activities .",
+      "Users can test their knowledge of Mariah Carey-oke's lyrics and vocal abilities . It uses voice recognition software to tell how well you can hit Carey's high notes . Snoopify transforms users into virtual 'gangsters'"
+     ],
+     "n_input_tokens": 1902,
+     "model": "sshleifer/distilbart-cnn-12-6",
+     "summary": "Kim Kardashian: Hollywood is the app from the reality star, which uses her likeness and voice . Users have to build a celebrity empire similar to Kim's . Lindsay Lohan's game, The Price of Fame, is a lot sillier than Kim Kardashian's . Users can test their knowledge of Mariah Carey-oke's lyrics and vocal abilities .",
+     "latency": 15.286107899999934,
+     "metrics": {
+      "words": 57,
+      "compression": 25.70175438596491,
+      "novel_1": 0.0,
+      "novel_2": 7.547169811320755,
+      "novel_3": 18.367346938775512,
+      "repeated_2": 1.8867924528301887,
+      "repeated_3": 0.0,
+      "latency": 15.286107899999934
+     },
+     "rouge": {
+      "rouge1": 43.47826086956522,
+      "rouge2": 15.555555555555555,
+      "rougeL": 39.130434782608695
+     },
+     "factcheck": {
+      "flags": [],
+      "backend": "spaCy"
+     }
+    }
+   },
+   "id": "87edb976f8c49008f2bd83f9e567784616319e5b",
+   "title": "Expensive clothes, fast cars and glittering industry parties: to the average...",
+   "n_bart_tokens": 1902,
+   "n_flags": {
+    "BART-large-CNN": 0,
+    "DistilBART-CNN (fast)": 0
+   }
+  }
+ ]
+}

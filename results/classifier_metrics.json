@@ -1,0 +1,160 @@
+{
+  "tuned_threshold": 0.1913,
+  "tuned_on": "validation",
+  "test": {
+    "BertSumExt-style, threshold 0.5": {
+      "n_sentences": 17094,
+      "positive_rate": 0.1489,
+      "accuracy": 0.8517,
+      "precision": 0.5364,
+      "recall": 0.0318,
+      "f1": 0.0601,
+      "roc_auc": 0.7597,
+      "confusion": [
+        [
+          14478,
+          70
+        ],
+        [
+          2465,
+          81
+        ]
+      ]
+    },
+    "BertSumExt-style, threshold 0.191 (F1-tuned on val)": {
+      "n_sentences": 17094,
+      "positive_rate": 0.1489,
+      "accuracy": 0.7685,
+      "precision": 0.3346,
+      "recall": 0.5609,
+      "f1": 0.4191,
+      "roc_auc": 0.7597,
+      "confusion": [
+        [
+          11708,
+          2840
+        ],
+        [
+          1118,
+          1428
+        ]
+      ]
+    },
+    "BertSumExt-style, top-3 per article": {
+      "n_sentences": 17094,
+      "positive_rate": 0.1489,
+      "accuracy": 0.8052,
+      "precision": 0.3693,
+      "recall": 0.4352,
+      "f1": 0.3996,
+      "roc_auc": 0.7597,
+      "confusion": [
+        [
+          12656,
+          1892
+        ],
+        [
+          1438,
+          1108
+        ]
+      ]
+    },
+    "Lead-3 rule (first 3 = positive)": {
+      "n_sentences": 17094,
+      "positive_rate": 0.1489,
+      "accuracy": 0.7823,
+      "precision": 0.304,
+      "recall": 0.3582,
+      "f1": 0.3289,
+      "roc_auc": 0.7597,
+      "confusion": [
+        [
+          12460,
+          2088
+        ],
+        [
+          1634,
+          912
+        ]
+      ]
+    }
+  },
+  "validation": {
+    "BertSumExt-style, threshold 0.5": {
+      "n_sentences": 5084,
+      "positive_rate": 0.1487,
+      "accuracy": 0.8525,
+      "precision": 0.5536,
+      "recall": 0.041,
+      "f1": 0.0764,
+      "roc_auc": 0.7445,
+      "confusion": [
+        [
+          4303,
+          25
+        ],
+        [
+          725,
+          31
+        ]
+      ]
+    },
+    "BertSumExt-style, threshold 0.191 (F1-tuned on val)": {
+      "n_sentences": 5084,
+      "positive_rate": 0.1487,
+      "accuracy": 0.7598,
+      "precision": 0.3245,
+      "recall": 0.5688,
+      "f1": 0.4133,
+      "roc_auc": 0.7445,
+      "confusion": [
+        [
+          3433,
+          895
+        ],
+        [
+          326,
+          430
+        ]
+      ]
+    },
+    "BertSumExt-style, top-3 per article": {
+      "n_sentences": 5084,
+      "positive_rate": 0.1487,
+      "accuracy": 0.7946,
+      "precision": 0.34,
+      "recall": 0.4048,
+      "f1": 0.3696,
+      "roc_auc": 0.7445,
+      "confusion": [
+        [
+          3734,
+          594
+        ],
+        [
+          450,
+          306
+        ]
+      ]
+    },
+    "Lead-3 rule (first 3 = positive)": {
+      "n_sentences": 5084,
+      "positive_rate": 0.1487,
+      "accuracy": 0.7919,
+      "precision": 0.3322,
+      "recall": 0.3955,
+      "f1": 0.3611,
+      "roc_auc": 0.7445,
+      "confusion": [
+        [
+          3727,
+          601
+        ],
+        [
+          457,
+          299
+        ]
+      ]
+    }
+  }
+}

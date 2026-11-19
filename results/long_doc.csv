@@ -1,0 +1,17 @@
+method,limit,group,n_articles,rouge1,rouge2,rougeL
+Lead-3,512 (BERT),over,769,39.46,16.54,35.66
+Lead-3,512 (BERT),within,231,42.01,20.32,38.58
+Lead-3,1024 (BART),over,296,37.58,14.95,33.81
+Lead-3,1024 (BART),within,704,41.08,18.45,37.39
+Extractive: BertSumExt-style (ours),512 (BERT),over,769,40.97,17.77,37.16
+Extractive: BertSumExt-style (ours),512 (BERT),within,231,43.66,22.1,40.41
+Extractive: BertSumExt-style (ours),1024 (BART),over,296,39.35,16.27,35.48
+Extractive: BertSumExt-style (ours),1024 (BART),within,704,42.53,19.82,38.93
+Oracle (extractive upper bound),512 (BERT),over,769,55.64,32.52,51.59
+Oracle (extractive upper bound),512 (BERT),within,231,57.84,36.56,54.44
+Oracle (extractive upper bound),1024 (BART),over,296,54.65,30.95,50.42
+Oracle (extractive upper bound),1024 (BART),within,704,56.78,34.5,53.02
+Abstractive: BART-large-CNN,512 (BERT),over,769,43.45,20.1,40.21
+Abstractive: BART-large-CNN,512 (BERT),within,231,46.81,25.32,43.93
+Abstractive: BART-large-CNN,1024 (BART),over,296,41.75,18.36,38.57
+Abstractive: BART-large-CNN,1024 (BART),within,704,45.26,22.54,42.12
