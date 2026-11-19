@@ -87,7 +87,7 @@ def main():
                     "seconds": round(time.time() - t0, 1)},
            "samples": samples}
     path = DEMO_CACHE / "samples.json"
-    path.write_text(json.dumps(out, indent=1, ensure_ascii=False))
+    path.write_text(json.dumps(out, indent=1, ensure_ascii=False), encoding="utf-8")
     for s in samples:
         a = next(iter(s["abstractive"].values()))
         log.info("%-14s %5d tok chunked=%s flags=%s R1 lead=%.1f ext=%.1f abs=%.1f | %s", s["id"][:14],

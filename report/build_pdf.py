@@ -103,6 +103,13 @@ def image(path: Path, caption: str | None, max_w: float = CONTENT_W, max_h: floa
     return KeepTogether(parts)
 
 
+def _min_cell_width(text: str, header: bool) -> float:
+    """Width of the longest unbreakable word in a cell, plus the 4 pt left/right padding."""
+    font, size = ("DVM", 8.4) if "`" in text else ("DV-B" if header or "**" in text else "DV", 7.9)
+    words = re.sub(r"[*`]", "", text).split() or [""]
+    return max(pdfmetrics.stringWidth(w, font, size) for w in words) + 9
+
+
 def table(lines: list[str]):
     rows = [[c.strip() for c in l.strip().strip("|").split("|")] for l in lines]
     rows = [r for r in rows if not all(re.fullmatch(r":?-{2,}:?", c) for c in r)]
@@ -111,6 +118,14 @@ def table(lines: list[str]):
     lens = [max(len(re.sub(r"[*`]", "", r[j])) for r in rows) for j in range(ncol)]
     weights = [min(max(l, 4), 48) for l in lens]
     widths = [CONTENT_W * w / sum(weights) for w in weights]
+    # every column at least as wide as its longest word (no "Accurac/y" breaks); the slack of the
+    # wider columns pays for it
+    mins = [max(_min_cell_width(r[j], i == 0) for i, r in enumerate(rows)) for j in range(ncol)]
+    widths = [max(w, m) for w, m in zip(widths, mins)]
+    excess = sum(widths) - CONTENT_W
+    slack = [w - m for w, m in zip(widths, mins)]
+    if excess > 0 and sum(slack) > 0:
+        widths = [w - excess * s / sum(slack) for w, s in zip(widths, slack)]
     data = [[Paragraph(inline(c), S["cellh"] if i == 0 else S["cell"]) for c in r] for i, r in enumerate(rows)]
     t = Table(data, colWidths=widths, repeatRows=1, hAlign="LEFT")
     t.setStyle(TableStyle([
@@ -222,6 +237,29 @@ def parse(md: str) -> list:
     return flow
 
 
+def _sticky(f) -> bool:
+    """Headings and table captions must stay on the same page as what follows them."""
+    return isinstance(f, Paragraph) and (f.style.name in ("h1", "h2", "h3") or f.text.startswith("<i>Table "))
+
+
+def keep_with_next(flow: list) -> list:
+    out, i = [], 0
+    while i < len(flow):
+        group = []
+        while i < len(flow) and _sticky(flow[i]):
+            group.append(flow[i])
+            i += 1
+        if not group:
+            out.append(flow[i])
+            i += 1
+            continue
+        if i < len(flow) and not isinstance(flow[i], PageBreak):
+            group.append(flow[i])
+            i += 1
+        out.append(KeepTogether(group))
+    return out
+
+
 def on_page(canvas, doc):
     if doc.page == 1:
         return
@@ -236,7 +274,7 @@ def on_page(canvas, doc):
 
 
 def build(src: Path = SRC, out: Path = OUT) -> Path:
-    flow = parse(src.read_text(encoding="utf-8"))
+    flow = keep_with_next(parse(src.read_text(encoding="utf-8")))
     doc = SimpleDocTemplate(str(out), pagesize=A4, leftMargin=MARGIN, rightMargin=MARGIN,
                             topMargin=MARGIN, bottomMargin=MARGIN,
                             title="Neural Text Summarization: A News-Article Summarizer Prototype",

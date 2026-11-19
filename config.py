@@ -51,6 +51,7 @@ PUBLISHED_ROUGE1 = {
     "BertSumAbs (Liu & Lapata 2019)": 41.72,
     "BertSumExtAbs (Liu & Lapata 2019)": 42.13,
     "BertSumExt (Liu & Lapata 2019)": 43.25,
+    "BART-large (Lewis 2020)": 44.16,
 }
 
 AUTHORS = "Vedansh Shukla & Abhist Kamle"

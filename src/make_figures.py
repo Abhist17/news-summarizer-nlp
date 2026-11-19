@@ -83,21 +83,21 @@ def novel_ngrams(scores: list[dict]):
 def latency(eff: dict, scores: list[dict]):
     lat = {m: v for m, v in eff["avg_latency_s"].items() if v is not None}
     items = sorted(lat.items(), key=lambda kv: kv[1])
+    floor = 2e-5  # Lead-3 takes microseconds (older results round it to 0): keep its bar visible on the log axis
     fig, ax = _fig(8.5, 0.6 * len(items) + 1.6)
     y = np.arange(len(items))
-    bars = ax.barh(y, [v for _, v in items], color=[COLORS[_kind(m)] for m, _ in items], height=0.6)
+    bars = ax.barh(y, [max(v, floor) for _, v in items], color=[COLORS[_kind(m)] for m, _ in items], height=0.6)
     for b, (_, v) in zip(bars, items):
-        lab = f"{v * 1000:.2f} ms" if v < 1 else f"{v:.2f} s"
+        lab = "< 0.1 ms" if v < 1e-4 else f"{v * 1000:.1f} ms" if v < 1 else f"{v:.2f} s"
         ax.text(b.get_width() * 1.15, b.get_y() + b.get_height() / 2, lab, va="center", fontsize=9, color=INK)
     ax.set_xscale("log")
     ax.set_yticks(y, [_short(m) for m, _ in items])
     ax.set_xlabel("seconds per article (log scale)", color=MUTED, fontsize=9)
     ax.xaxis.grid(True, color=GRID)
-    ax.set_xlim(min(v for _, v in items) / 4, max(v for _, v in items) * 12)
-    dev = eff["device"].upper()
+    ax.set_xlim(floor / 4, max(v for _, v in items) * 12)
     hw = eff["hardware"].get("gpu") if eff["device"] == "cuda" else eff["hardware"].get("cpu")
-    _style(ax, "Average latency per article", f"Measured on {dev} ({hw}); BART batched "
-           f"{eff.get('abstractive_batch_size')} at a time, latency = batch time / batch size.")
+    _style(ax, "Average latency per article",
+           f"{hw}; BART in batches of {eff.get('abstractive_batch_size')} (latency = batch time / batch size).")
     fig.tight_layout()
     fig.subplots_adjust(left=0.2)
     fig.savefig(FIG / "latency.png", facecolor=fig.get_facecolor())
@@ -233,16 +233,16 @@ def pipeline_diagram():
 def make_all():
     FIG.mkdir(parents=True, exist_ok=True)
     pipeline_diagram()
-    js = json.loads((RESULTS / "scores.json").read_text())
+    js = json.loads((RESULTS / "scores.json").read_text(encoding="utf-8"))
     if (RESULTS / "rouge_comparison.png").exists():
         shutil.copy(RESULTS / "rouge_comparison.png", FIG / "rouge_comparison.png")
     novel_ngrams(js["scores"])
     latency(js["efficiency"], js["scores"])
-    per = [json.loads(l) for l in (RESULTS / "per_article.jsonl").read_text().splitlines() if l.strip()]
+    per = [json.loads(l) for l in (RESULTS / "per_article.jsonl").read_text(encoding="utf-8").splitlines() if l.strip()]
     rouge_vs_length(per)
     confusion(js.get("classifier", {}))
     if (RESULTS / "train_log.json").exists():
-        training_curve(json.loads((RESULTS / "train_log.json").read_text()))
+        training_curve(json.loads((RESULTS / "train_log.json").read_text(encoding="utf-8")))
     print(f"Figures written to {FIG}")
 
 

@@ -21,7 +21,7 @@ def test_app_imports_and_helpers():
 
 @pytest.mark.skipif(not (DEMO_CACHE / "samples.json").exists(), reason="run `make demo-cache` first")
 def test_demo_cache_schema():
-    data = json.loads((DEMO_CACHE / "samples.json").read_text())
+    data = json.loads((DEMO_CACHE / "samples.json").read_text(encoding="utf-8"))
     assert len(data["samples"]) >= 8
     assert any(next(iter(s["abstractive"].values()))["chunked"] for s in data["samples"])
     for s in data["samples"]:

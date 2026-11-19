@@ -74,7 +74,7 @@ def aggregate(method: str, dataset: str, df: pd.DataFrame) -> dict:
         out[col] = round(float(df[col].mean()), 2)
     out["avg_words"] = round(float(df["words"].mean()), 1)
     lat = df["latency"].astype(float)
-    out["avg_latency_s"] = round(float(lat.mean()), 4) if lat.notna().any() else None
+    out["avg_latency_s"] = round(float(lat.mean()), 6) if lat.notna().any() else None
     return out
 
 
@@ -144,7 +144,7 @@ def save_classifier(clf: dict) -> None:
     flat = [{"split": s, "rule": rule, **{k: v for k, v in m.items() if k != "confusion"}}
             for s, d in clf.items() if isinstance(d, dict) for rule, m in d.items()]
     pd.DataFrame(flat).to_csv(RESULTS / "classifier_metrics.csv", index=False)
-    (RESULTS / "classifier_metrics.json").write_text(json.dumps(clf, indent=2))
+    (RESULTS / "classifier_metrics.json").write_text(json.dumps(clf, indent=2), encoding="utf-8")
 
 
 def run_abstractive(model: AbstractiveSummarizer, rows: list[dict], batch_size: int) -> list[dict]:
@@ -170,13 +170,21 @@ def hardware() -> dict:
     info = {"platform": platform.platform(), "python": platform.python_version(),
             "cpu": platform.processor() or platform.machine(), "torch": torch.__version__}
     try:
-        with open("/proc/cpuinfo") as f:
+        with open("/proc/cpuinfo", encoding="utf-8") as f:
             for line in f:
                 if line.startswith("model name"):
                     info["cpu"] = line.split(":", 1)[1].strip()
                     break
     except OSError:
         pass
+    if platform.system() == "Windows":  # platform.processor() only gives "Intel64 Family 6 Model ..."
+        try:
+            import winreg
+
+            with winreg.OpenKey(winreg.HKEY_LOCAL_MACHINE, r"HARDWARE\DESCRIPTION\System\CentralProcessor\0") as k:
+                info["cpu"] = winreg.QueryValueEx(k, "ProcessorNameString")[0].strip()
+        except OSError:
+            pass
     import os
 
     info["cpu_threads"] = os.cpu_count()
@@ -259,10 +267,10 @@ def main():
         clf = classifier_report(ext, load_cnndm("test", args.n),
                                 load_cnndm("validation", args.val_n) if args.val_n > 0 else [])
         save_classifier(clf)
-        js = json.loads((RESULTS / "scores.json").read_text())
+        js = json.loads((RESULTS / "scores.json").read_text(encoding="utf-8"))
         js["classifier"] = clf
         js["meta"]["val_n_classifier"] = args.val_n
-        (RESULTS / "scores.json").write_text(json.dumps(js, indent=2))
+        (RESULTS / "scores.json").write_text(json.dumps(js, indent=2), encoding="utf-8")
         from src.make_figures import make_all
 
         make_all()
@@ -365,7 +373,7 @@ def main():
                 "pct_with_flag": round(100 * float(np.mean([f > 0 for f in n_flags])), 2),
                 "avg_flags_per_summary": round(float(np.mean(n_flags)), 3),
                 "max_flags": int(max(n_flags))}
-        (RESULTS / "factcheck_stats.json").write_text(json.dumps(fact, indent=2))
+        (RESULTS / "factcheck_stats.json").write_text(json.dumps(fact, indent=2), encoding="utf-8")
 
     # ---------------------------------------------------------------- classifier metrics
     clf = {}
@@ -374,7 +382,7 @@ def main():
         save_classifier(clf)
 
     # ---------------------------------------------------------------- efficiency
-    train_log = json.loads((RESULTS / "train_log.json").read_text()) if (RESULTS / "train_log.json").exists() else {}
+    train_log = json.loads((RESULTS / "train_log.json").read_text(encoding="utf-8")) if (RESULTS / "train_log.json").exists() else {}
     eff = {"device": device, "hardware": hardware(),
            "avg_latency_s": {r["method"]: r["avg_latency_s"] for r in table if r["dataset"] == "CNN/DM"},
            "abstractive_batch_size": bs if abs_items else None,
@@ -385,7 +393,7 @@ def main():
         eff["extractive_checkpoint_mb"] = round(EXT_CHECKPOINT.stat().st_size / 1e6, 2)
     if abs_model:
         eff["model_params"][abs_model.model_name] = n_params(abs_model.model)
-    (RESULTS / "efficiency.json").write_text(json.dumps(eff, indent=2))
+    (RESULTS / "efficiency.json").write_text(json.dumps(eff, indent=2), encoding="utf-8")
 
     # ---------------------------------------------------------------- save
     df = pd.DataFrame(table)
@@ -399,8 +407,8 @@ def main():
     (RESULTS / "scores.json").write_text(json.dumps(
         {"meta": meta, "scores": table, "paired_on_abstractive_subset": paired, "long_documents": long_stats,
          "factcheck": fact, "classifier": clf, "efficiency": eff, "published_rouge1": PUBLISHED_ROUGE1},
-        indent=2))
-    with (RESULTS / "per_article.jsonl").open("w") as f:
+        indent=2), encoding="utf-8")
+    with (RESULTS / "per_article.jsonl").open("w", encoding="utf-8") as f:
         abs_by_id = {it["id"]: it["summary"] for it in abs_items}
         score_cols = {m: d.set_index("id") for m, d in dfs.items()}
         for l, e, o in zip(lead_items, ext_items, orc_items):

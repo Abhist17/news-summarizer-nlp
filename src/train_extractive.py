@@ -195,7 +195,7 @@ def main():
                "val_oracle": base["oracle"], "history": history,
                "seconds": {"data": t_data - t_start, "encode": t_enc - t_data,
                            "train": time.time() - t_enc, "total": time.time() - t_start}}
-    (RESULTS / "train_log.json").write_text(json.dumps(summary, indent=2))
+    (RESULTS / "train_log.json").write_text(json.dumps(summary, indent=2), encoding="utf-8")
     log.info("Best epoch %d -> %s (%.1f MB). Total %.1f min", best_epoch, EXT_CHECKPOINT,
              EXT_CHECKPOINT.stat().st_size / 1e6, (time.time() - t_start) / 60)
 

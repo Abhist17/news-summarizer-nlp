@@ -18,7 +18,7 @@ SAMPLES_PATH = DEMO_CACHE / "samples.json"
 
 CSS = """
 <style>
-.block-container {padding-top: 1.6rem; max-width: 1500px;}
+.block-container {padding-top: 3.4rem; max-width: 1500px;}
 .app-title {font-size: 2.05rem; font-weight: 700; margin: 0; line-height: 1.2;}
 .app-sub {color: #52514e; font-size: 1.02rem; margin: .25rem 0 .2rem 0;}
 .app-line {font-size: 1.02rem; margin: .35rem 0 .6rem 0;}
@@ -282,7 +282,7 @@ def render_evaluation():
     meta = {}
     js = RESULTS / "scores.json"
     if js.exists():
-        meta = json.loads(js.read_text()).get("meta", {})
+        meta = json.loads(js.read_text(encoding="utf-8")).get("meta", {})
     st.markdown(f"**Our numbers** on a CNN/DM test sample ({meta.get('n_test', '?')} articles; "
                 f"abstractive on the first {meta.get('abs_n', '?')}). Device: `{meta.get('device', '?')}`. "
                 f"{meta.get('rouge', '')}.")
@@ -305,7 +305,7 @@ def render_evaluation():
                      hide_index=True, use_container_width=True)
         tl = RESULTS / "train_log.json"
         if tl.exists():
-            t = json.loads(tl.read_text())
+            t = json.loads(tl.read_text(encoding="utf-8"))
             st.markdown(f"**Extractive training:** {t['train_n']} articles, encoder `{t['encoder']}` (frozen), "
                         f"best epoch {t['best_epoch']}/{t['epochs']}, val ROUGE-1 "
                         f"{t['best_val']['rouge1']:.2f} (val Lead-3 {t['val_lead3']['rouge1']:.2f}, "
