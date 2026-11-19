@@ -93,25 +93,58 @@ def classifier_metrics(probs: list[float], labels: list[int], preds: list[int]) 
 
 
 def collect_classifier(ext: ExtractiveSummarizer, rows: list[dict]) -> dict:
-    """Per-sentence probabilities vs in-window oracle labels, three decision rules."""
-    probs, labels, thr, top3, lead = [], [], [], [], []
+    """Per-sentence probabilities vs in-window greedy-oracle labels."""
+    probs, labels, top3, lead = [], [], [], []
     for r in tqdm(rows, desc="Classifier"):
         sents = split_sentences(r["article"])
         scores = ext.score(sents)
         n = sum(1 for s in scores if s is not None)
         if n == 0:
             continue
-        lab = oracle_labels(sents[:n], r["highlights"])
         sc = scores[:n]
         order = set(np.argsort(-np.array(sc))[:3].tolist())
         probs += sc
-        labels += lab
-        thr += [int(s >= 0.5) for s in sc]
+        labels += oracle_labels(sents[:n], r["highlights"])
         top3 += [int(i in order) for i in range(n)]
         lead += [int(i < 3) for i in range(n)]
-    return {"BertSumExt-style, threshold 0.5": classifier_metrics(probs, labels, thr),
-            "BertSumExt-style, top-3 per article": classifier_metrics(probs, labels, top3),
-            "Lead-3 rule (first 3 = positive)": classifier_metrics(probs, labels, lead)}
+    return {"probs": probs, "labels": labels, "top3": top3, "lead": lead}
+
+
+def best_f1_threshold(probs, labels) -> float:
+    from sklearn.metrics import precision_recall_curve
+
+    p, r, t = precision_recall_curve(labels, probs)
+    f1 = 2 * p * r / np.clip(p + r, 1e-9, None)
+    return float(t[int(np.argmax(f1[:-1]))])
+
+
+def classifier_report(ext: ExtractiveSummarizer, test_rows: list[dict], val_rows: list[dict]) -> dict:
+    """Four decision rules: fixed 0.5, F1-optimal threshold chosen on validation (applied to
+    both splits), top-3 per article (what the summarizer does) and the Lead-3 rule."""
+    raw = {"test": collect_classifier(ext, test_rows)}
+    if val_rows:
+        raw["validation"] = collect_classifier(ext, val_rows)
+    tune = raw.get("validation", raw["test"])
+    thr = best_f1_threshold(tune["probs"], tune["labels"])
+    out = {"tuned_threshold": round(thr, 4),
+           "tuned_on": "validation" if "validation" in raw else "test"}
+    for split, d in raw.items():
+        p, y = d["probs"], d["labels"]
+        out[split] = {
+            "BertSumExt-style, threshold 0.5": classifier_metrics(p, y, [int(x >= 0.5) for x in p]),
+            f"BertSumExt-style, threshold {thr:.3f} (F1-tuned on val)":
+                classifier_metrics(p, y, [int(x >= thr) for x in p]),
+            "BertSumExt-style, top-3 per article": classifier_metrics(p, y, d["top3"]),
+            "Lead-3 rule (first 3 = positive)": classifier_metrics(p, y, d["lead"]),
+        }
+    return out
+
+
+def save_classifier(clf: dict) -> None:
+    flat = [{"split": s, "rule": rule, **{k: v for k, v in m.items() if k != "confusion"}}
+            for s, d in clf.items() if isinstance(d, dict) for rule, m in d.items()]
+    pd.DataFrame(flat).to_csv(RESULTS / "classifier_metrics.csv", index=False)
+    (RESULTS / "classifier_metrics.json").write_text(json.dumps(clf, indent=2))
 
 
 def run_abstractive(model: AbstractiveSummarizer, rows: list[dict], batch_size: int) -> list[dict]:
@@ -213,11 +246,28 @@ def main():
     ap.add_argument("--xsum", action="store_true", help="also stress-test on XSum")
     ap.add_argument("--xsum-n", type=int, default=50)
     ap.add_argument("--device", default=None)
+    ap.add_argument("--only-classifier", action="store_true",
+                    help="recompute only the classifier metrics and update results/scores.json")
     args = ap.parse_args()
     logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
     device = get_device(args.device)
     t_start = time.time()
     bs = args.abs_batch_size or 4
+
+    if args.only_classifier:
+        ext = ExtractiveSummarizer(device=device)
+        clf = classifier_report(ext, load_cnndm("test", args.n),
+                                load_cnndm("validation", args.val_n) if args.val_n > 0 else [])
+        save_classifier(clf)
+        js = json.loads((RESULTS / "scores.json").read_text())
+        js["classifier"] = clf
+        js["meta"]["val_n_classifier"] = args.val_n
+        (RESULTS / "scores.json").write_text(json.dumps(js, indent=2))
+        from src.make_figures import make_all
+
+        make_all()
+        print(pd.read_csv(RESULTS / "classifier_metrics.csv").to_string(index=False))
+        return
 
     rows = load_cnndm("test", args.n)
     ext = ExtractiveSummarizer(device=device)
@@ -320,13 +370,8 @@ def main():
     # ---------------------------------------------------------------- classifier metrics
     clf = {}
     if ext.is_trained:
-        clf["test"] = collect_classifier(ext, rows)
-        if args.val_n > 0:
-            clf["validation"] = collect_classifier(ext, load_cnndm("validation", args.val_n))
-        flat = [{"split": s, "rule": rule, **{k: v for k, v in m.items() if k != "confusion"}}
-                for s, d in clf.items() for rule, m in d.items()]
-        pd.DataFrame(flat).to_csv(RESULTS / "classifier_metrics.csv", index=False)
-        (RESULTS / "classifier_metrics.json").write_text(json.dumps(clf, indent=2))
+        clf = classifier_report(ext, rows, load_cnndm("validation", args.val_n) if args.val_n > 0 else [])
+        save_classifier(clf)
 
     # ---------------------------------------------------------------- efficiency
     train_log = json.loads((RESULTS / "train_log.json").read_text()) if (RESULTS / "train_log.json").exists() else {}
